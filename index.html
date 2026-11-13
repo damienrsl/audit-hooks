@@ -77,6 +77,20 @@ section{margin:28px 0}
 .bench{padding:4px 16px} .bench li{list-style:none;padding:9px 0;border-top:1px solid rgba(20,20,30,.06);font-size:13.5px;line-height:1.4;color:var(--texte-2)} .bench li:first-child{border-top:0} .bench b{color:var(--texte)}
 .muet{color:var(--texte-3)}
 .pied{margin-top:30px;font-size:12.5px;color:var(--texte-3);text-align:center}
+.carte{padding-right:16px} .carte .haut{padding-right:50px}
+.coeur{position:absolute;right:12px;top:12px;width:44px;height:44px;border-radius:50%;border:0;background:rgba(255,255,255,.9);box-shadow:0 2px 10px -4px rgba(40,95,255,.5);display:flex;align-items:center;justify-content:center;z-index:2;cursor:pointer}
+.coeur svg{width:22px;height:22px;fill:none;stroke:var(--pan-3);stroke-width:2}
+.coeur.on{background:linear-gradient(135deg,var(--pan),var(--pan-3))} .coeur.on svg{fill:#fff;stroke:#fff}
+.carte.choisie{box-shadow:0 0 0 1.5px var(--pan),0 10px 30px -18px rgba(40,95,255,.6)}
+.note{display:none;margin-top:8px;width:100%;min-height:44px;border-radius:14px;border:1px solid rgba(40,95,255,.2);padding:10px 12px;font:15px var(--police);background:rgba(255,255,255,.7);color:var(--texte);resize:vertical}
+.carte.choisie .note{display:block}
+.bas{position:fixed;left:0;right:0;bottom:0;z-index:10;padding:10px 14px calc(10px + env(safe-area-inset-bottom))}
+.bas .verre{max-width:720px;margin:0 auto;display:flex;align-items:center;gap:10px;padding:10px 10px 10px 16px;border-radius:999px}
+.bas .compte{flex:1;font:600 15px var(--police)} .bas .compte small{display:block;font-weight:400;font-size:12px;color:var(--texte-3)}
+.bas button{border:0;border-radius:999px;padding:12px 18px;font:700 15px var(--police);color:#fff;background:linear-gradient(135deg,var(--pan),var(--pan-3))}
+.toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%);background:var(--texte);color:#fff;padding:10px 16px;border-radius:999px;font:600 14px var(--police);opacity:0;transition:opacity .2s;pointer-events:none;z-index:11} .toast.on{opacity:1}
+main{padding-bottom:120px}
+.tests a{color:inherit;border:0;display:block}
 @media (max-width:420px){.tuile b{font-size:22px} h1{font-size:28px}}
 
 </style></head>
@@ -86,7 +100,8 @@ section{margin:28px 0}
 <div class="etiquette">Hooks · audit Internet · 13/11/2026</div>
 <h1>42 formes de hook, 120 vidéos ouvertes</h1>
 <div class="verre mot"><p>Ce qui s'ouvre autrement que « toi face caméra + un verdict » : mode francophone, mode anglophone, et hors niche. Chaque forme = pourquoi ça retient, ce qu'on voit et ce qu'on entend dans les 3 premières secondes, des vidéos réelles qui ont marché, et le look à tourner pour un épisode de la série.</p>
-<p>Honnêteté : les vues d'ailleurs prouvent qu'une forme existe, pas qu'elle marchera chez toi. Rien n'est écrit à ta place : tu écris tes textes.</p></div>
+<p>Honnêteté : les vues d'ailleurs prouvent qu'une forme existe, pas qu'elle marchera chez toi. Rien n'est écrit à ta place : tu écris tes textes.</p>
+<p><b>Comment choisir</b> : touche le cœur sur les formes que tu veux tourner, ajoute une note si tu veux, puis « Envoyer » en bas : le texte se copie, tu le colles ici dans Tokn. Ensuite je croise tes cœurs avec tes épisodes. Tes choix restent sur ce téléphone.</p></div>
 
 <section>
 <div class="tuiles">
@@ -98,7 +113,7 @@ section{margin:28px 0}
 
 <section>
 <div class="etiquette">À tester en premier</div>
-<div class="verre fait"><b>1 · L'épreuve filmée</b><p>La preuve remplace le verdict : la doudoune sous l'eau, la laine à la flamme, la chaussette mérinos après trois jours. Aucun mot hype nécessaire. TaiK 1,4 M, La Routine 2,4 M, Elliot Page 5,5 M (28 fois sa médiane).</p></div><div class="verre fait"><b>2 · Devine le prix</b><p>Ton fil rouge valeur/prix transformé en jeu : Emilio ou un passant devine, le vrai prix tombe en dernier. Matthyss 2 M, SunLight 1,4 M, Vaishnavi Thakur 8,6 M.</p></div><div class="verre fait"><b>3 · Le billet dans la main</b><p>Un budget visible et petit, tendu vers le rayon : la promesse est tenable et ton visage n'arrive qu'après. CHEZ CASTAING 4,3 M et 5,8 M.</p></div><div class="verre fait"><b>4 · Le lieu fait le hook</b><p>Le tour d'Asie te le donne chaque jour : konbini, Daiso, marché de gros. C'est ton histoire Vinted, la pièce là où on ne l'attend pas. Johnny Thai 1,26 M (25 fois sa médiane).</p></div><div class="verre fait"><b>5 · À l'aveugle</b><p>Les yeux bandés, tu touches deux pulls et tu devines le cher : « sous-coté » mis en image. Prouvé hors mode (Etchebest 1,3 M, Manon Réaction 841 k), jamais vu en mode homme français.</p></div><div class="verre fait"><b>6 · La bulle commentaire</b><p>Une vraie objection d'abonné collée à l'écran dès la première image, et tu réponds avec la pièce en main. iPhone seul. Alex Cormac 1,65 M.</p></div>
+<div class="tests"><a class="verre fait" href="#f01"><b>1 · L'épreuve filmée</b><p>La preuve remplace le verdict : la doudoune sous l'eau, la laine à la flamme, la chaussette mérinos après trois jours. Aucun mot hype nécessaire. TaiK 1,4 M, La Routine 2,4 M, Elliot Page 5,5 M (28 fois sa médiane).</p></a><a class="verre fait" href="#f02"><b>2 · Devine le prix</b><p>Ton fil rouge valeur/prix transformé en jeu : Emilio ou un passant devine, le vrai prix tombe en dernier. Matthyss 2 M, SunLight 1,4 M, Vaishnavi Thakur 8,6 M.</p></a><a class="verre fait" href="#f03"><b>3 · Le billet dans la main</b><p>Un budget visible et petit, tendu vers le rayon : la promesse est tenable et ton visage n'arrive qu'après. CHEZ CASTAING 4,3 M et 5,8 M.</p></a><a class="verre fait" href="#f04"><b>4 · Le lieu fait le hook</b><p>Le tour d'Asie te le donne chaque jour : konbini, Daiso, marché de gros. C'est ton histoire Vinted, la pièce là où on ne l'attend pas. Johnny Thai 1,26 M (25 fois sa médiane).</p></a><a class="verre fait" href="#f05"><b>5 · À l'aveugle</b><p>Les yeux bandés, tu touches deux pulls et tu devines le cher : « sous-coté » mis en image. Prouvé hors mode (Etchebest 1,3 M, Manon Réaction 841 k), jamais vu en mode homme français.</p></a><a class="verre fait" href="#f06"><b>6 · La bulle commentaire</b><p>Une vraie objection d'abonné collée à l'écran dès la première image, et tu réponds avec la pièce en main. iPhone seul. Alex Cormac 1,65 M.</p></a></div>
 </section>
 
 <section>
@@ -112,8 +127,10 @@ section{margin:28px 0}
 <button class="f" data-k="fr">Francophone</button>
 <button class="f" data-k="en">Anglophone</button>
 <button class="f" data-k="hn">Hors niche</button>
+<button class="f" data-k="coeur">Mes cœurs</button>
 </div>
-<article class="carte verre top" data-v="compatible" data-n="1" data-s="en fr" data-c="iphone">
+<article class="carte verre top" data-v="compatible" data-n="1" data-s="en fr" data-c="iphone" id="f01" data-i="01" data-nom="L'épreuve filmée (on met la pièce à l'épreuve)">
+<button class="coeur" data-c="01" aria-label="Coup de cœur"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9A5.2 5.2 0 0 1 12 6.4 5.2 5.2 0 0 1 21.3 12C19 16.4 12 21 12 21z"/></svg></button>
 <div class="haut"><span class="num">01</span><span class="chip gris">Anglophone + Francophone</span><span class="chip fort">Compatible</span><span class="chip neuf">Nouveau pour toi</span><span class="chip gris">iPhone seul</span></div>
 <h3>L'épreuve filmée (on met la pièce à l'épreuve)</h3>
 <div class="det"><b>Pourquoi ça retient</b> : une affirmation est mise à l'épreuve devant nous (courir, avoir froid, se mouiller) ; la boucle ouverte est « est-ce que ça tient vraiment ? » et la réponse arrive à l'image, pas à l'oral.</div>
@@ -121,7 +138,9 @@ section{margin:28px 0}
 <div class="det"><b>Pour toi</b> : compatible et très « hiver » (froid, pluie, neige du tour d'Asie) — mais les emojis  et « illegal / mind control » d'Elliot sont du racolage à ne pas copier : le test doit être réel et le titre neutre.</div>
 <ul class="ex"><li><a href="https://www.youtube.com/shorts/gbb-poqynZs" target="_blank" rel="noopener">Elliot Page · YouTube Shorts</a><span class="vu">lien ouvert</span><br>5 516 432 vues, médiane 195 k (×28), 01/2026 · hook : « I Tested Nike's Mind Control Shoes »</li><li><a href="https://www.youtube.com/shorts/YoeGmrIKHp0" target="_blank" rel="noopener">Elliot Page · YouTube Shorts</a><span class="vu">lien ouvert</span><br>3 118 709 vues, ×16, 03/2026 · hook : « Trying to Run In Illegal Shoes »</li><li><a href="https://www.youtube.com/shorts/b_nRwQ1ZbUI" target="_blank" rel="noopener">The Iron Snail · YouTube Shorts</a><span class="vu">lien ouvert</span><br>16 805 148 vues, médiane 2,7 M (×6), 04/2026 · hook : « Wear fishnets on a hike, save your life! »</li><li><a href="https://www.youtube.com/shorts/ZE9VBA9gdwA" target="_blank" rel="noopener">TaiK · YouTube Shorts</a><span class="vu">lien ouvert</span><br>1 422 243 vues · hook : il se verse un gobelet d'eau sur une doudoune en la portant, sous-titres « acheté… immédiatement » (image vue), « La veste la plus imperméable du monde » (titre)</li><li><a href="https://www.youtube.com/shorts/LS4GS10Hvn4" target="_blank" rel="noopener">CIMALP TV · YouTube Shorts</a><span class="vu">lien ouvert</span><br>321 518 vues · hook : un homme debout sous une cascade, « La veste STORM PRO est vraiment imperméable » (texte à l'écran)</li><li><a href="https://www.youtube.com/shorts/2HeShIl4Xnk" target="_blank" rel="noopener">La Routine · YouTube Shorts</a><span class="vu">lien ouvert</span><br>2 403 727 vues · hook : « j'ai 3000 € … pressing » avec une machine à laver incrustée (texte à l'écran), « Ma DOUDOUNE à 3000€ au PRESSING » (titre)</li></ul>
 <div class="look"><b>Le look à tourner</b> · épisode « chaussettes mérinos » : une chaussette mérinos à un pied, une coton à l'autre, pieds dans la neige ou une bassine d'eau froide, plan serré au sol ; Emilio filme, chrono à l'écran. <br><span class=muet>Variante :</span> Emilio filme en plan moyen, Damien porte la pièce dehors ou dans la douche, le seau d'eau entre dans le cadre à la première seconde ; texte = la question testée, en bas.</div>
-</article><article class="carte verre top" data-v="compatible" data-n="1" data-s="fr hn" data-c="autre">
+<textarea class="note" data-n="01" placeholder="Une note pour cette forme (facultatif)"></textarea>
+</article><article class="carte verre top" data-v="compatible" data-n="1" data-s="fr hn" data-c="autre" id="f02" data-i="02" data-nom="Devine le prix (le prix tombe en dernier)">
+<button class="coeur" data-c="02" aria-label="Coup de cœur"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9A5.2 5.2 0 0 1 12 6.4 5.2 5.2 0 0 1 21.3 12C19 16.4 12 21 12 21z"/></svg></button>
 <div class="haut"><span class="num">02</span><span class="chip gris">Francophone + Hors niche</span><span class="chip fort">Compatible</span><span class="chip neuf">Nouveau pour toi</span><span class="chip gris">2e personne</span></div>
 <h3>Devine le prix (le prix tombe en dernier)</h3>
 <div class="det"><b>Pourquoi ça retient</b> : le spectateur joue contre la personne à l'écran ; l'enjeu (« si tu devines, je te l'achète ») ajoute une conséquence réelle, donc on attend la réponse.</div>
@@ -129,7 +148,9 @@ section{margin:28px 0}
 <div class="det"><b>Pour toi</b> : compatible : c'est le format le plus proche de son fil rouge ; règle « le hook ne promet que ce que la vidéo tient » : si on dit « je te l'achète », il faut l'acheter.</div>
 <ul class="ex"><li><a href="https://www.youtube.com/shorts/sUTRkTI0Law" target="_blank" rel="noopener">Matthyss · YouTube Shorts</a><span class="vu">lien ouvert</span><br>2 033 636 vues · hook : bande de potes avec caddie dans un hypermarché, « SI TU DEVINES LE PRIX JE TE L'ACHÈTE ! » (titre)</li><li><a href="https://www.youtube.com/shorts/RsQuQmxbItw" target="_blank" rel="noopener">SunLight · YouTube Shorts</a><span class="vu">lien ouvert</span><br>1 374 407 vues · hook : deux garçons dans la rue, « devine le prix de ma tenue ! » (titre)</li><li><a href="https://www.youtube.com/shorts/9nj78FkluBg" target="_blank" rel="noopener">SANA ET LINA officiel · YouTube Shorts</a><span class="vu">lien ouvert</span><br>5 800 263 vues · hook : « Devine le prix » (titre ; images non regardées) (existence et vues), images non vues</li><li><a href="https://www.youtube.com/shorts/BP8IWQ9u1h8" target="_blank" rel="noopener">Vaishnavi Thakur · mode/sacs · YouTube Shorts</a><span class="vu">lien ouvert</span><br>8 598 264 vues (02/10/2025)</li><li><a href="https://www.youtube.com/shorts/NqO0B860HjE" target="_blank" rel="noopener">Jimbo Hall · peluches · YouTube Shorts</a><span class="vu">lien ouvert</span><br>2 446 554 vues (26/07/2026)</li></ul>
 <div class="look"><b>Le look à tourner</b> · Damien et Emilio face à face dans un magasin, la pièce entre eux, Emilio en amorce de dos ; iPhone sur trépied bas, texte « combien ? » au centre. <br><span class=muet>Variante :</span> Emilio (ou un passant en Asie) devine le prix des 3 gants de l'épisode ; le vrai prix s'affiche après chaque essai ; le « sous-coté » saute aux yeux.</div>
-</article><article class="carte verre top" data-v="compatible" data-n="1" data-s="fr hn" data-c="iphone">
+<textarea class="note" data-n="02" placeholder="Une note pour cette forme (facultatif)"></textarea>
+</article><article class="carte verre top" data-v="compatible" data-n="1" data-s="fr hn" data-c="iphone" id="f03" data-i="03" data-nom="Le billet dans la main (« avec 50 €, j'ai quoi ? »)">
+<button class="coeur" data-c="03" aria-label="Coup de cœur"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9A5.2 5.2 0 0 1 12 6.4 5.2 5.2 0 0 1 21.3 12C19 16.4 12 21 12 21z"/></svg></button>
 <div class="haut"><span class="num">03</span><span class="chip gris">Francophone + Hors niche</span><span class="chip fort">Compatible</span><span class="chip neuf">Nouveau pour toi</span><span class="chip gris">iPhone seul</span></div>
 <h3>Le billet dans la main (« avec 50 €, j'ai quoi ? »)</h3>
 <div class="det"><b>Pourquoi ça retient</b> : un budget physique, visible et petit, tendu vers la caméra : chacun se demande « moi, j'aurais quoi avec ça ? ». Le billet est un objet, pas un mot hype.</div>
@@ -137,7 +158,9 @@ section{margin:28px 0}
 <div class="det"><b>Pour toi</b> : compatible : parfait pour un épisode « trois couches » ou « gants » (budget annoncé = promesse tenable) ; éviter le « c'est possible ?! » emphatique.</div>
 <ul class="ex"><li><a href="https://www.youtube.com/shorts/dk5x0BWfb_o" target="_blank" rel="noopener">CHEZ CASTAING · YouTube Shorts</a><span class="vu">lien ouvert</span><br>4 293 992 vues · hook : main + billet de 50 € tendu vers le boucher (image vue), « On peut prendre quoi avec 50 euros ? » (titre)</li><li><a href="https://www.youtube.com/shorts/PjI-PdjaBWc" target="_blank" rel="noopener">CHEZ CASTAING · YouTube Shorts</a><span class="vu">lien ouvert</span><br>5 767 565 vues · hook : billet de 100 € au premier plan, boucher en fond, « On peut prendre quoi avec 100€ ? » (titre)</li><li><a href="https://www.youtube.com/shorts/ngNThLzTjCI" target="_blank" rel="noopener">Alex Cormac · YouTube Shorts</a><span class="vu">lien ouvert</span><br>593 197 vues · hook : face caméra, « S'HABILLER EN COSTUME POUR 150€, C'EST POSSIBLE ? » (titre)</li><li><a href="https://www.youtube.com/shorts/Ga_MoAYie1k" target="_blank" rel="noopener">Evon Pluto · mode · YouTube Shorts</a><span class="vu">lien ouvert</span><br>1 889 235 vues (28/07/2025)</li><li><a href="https://www.youtube.com/shorts/mcFbuNhZIwc" target="_blank" rel="noopener">Drew Binsky · voyage · YouTube Shorts</a><span class="vu">lien ouvert</span><br>5 329 449 vues (06/10/2023)</li></ul>
 <div class="look"><b>Le look à tourner</b> · Damien tient l'iPhone lui-même en subjectif, son autre main tend le billet vers le rayon ou le vendeur (Uniqlo, Decathlon, friperie) ; pas de visage avant 2 s. <br><span class=muet>Variante :</span> un billet de 50 € (ou l'équivalent en yens) posé sur le comptoir d'un Uniqlo/Muji japonais : couvrir les 3 couches pour ce prix. Emilio filme ; le compteur de dépense descend à l'écran.</div>
-</article><article class="carte verre top" data-v="compatible" data-n="1" data-s="en hn" data-c="iphone">
+<textarea class="note" data-n="03" placeholder="Une note pour cette forme (facultatif)"></textarea>
+</article><article class="carte verre top" data-v="compatible" data-n="1" data-s="en hn" data-c="iphone" id="f04" data-i="04" data-nom="Le lieu fait le hook (konbini, marché, friperie)">
+<button class="coeur" data-c="04" aria-label="Coup de cœur"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9A5.2 5.2 0 0 1 12 6.4 5.2 5.2 0 0 1 21.3 12C19 16.4 12 21 12 21z"/></svg></button>
 <div class="haut"><span class="num">04</span><span class="chip gris">Anglophone + Hors niche</span><span class="chip fort">Compatible</span><span class="chip neuf">Nouveau pour toi</span><span class="chip gris">iPhone seul</span></div>
 <h3>Le lieu fait le hook (konbini, marché, friperie)</h3>
 <div class="det"><b>Pourquoi ça retient</b> : le décor annonce l'histoire avant les mots (« un centre commercial bloqué dans les années 90 », « du Carhartt chez Walmart ») ; l'incongruité lieu/objet crée la question.</div>
@@ -145,7 +168,9 @@ section{margin:28px 0}
 <div class="det"><b>Pour toi</b> : compatible et immédiat — le tour d'Asie lui donne les décors (konbini, marché de gros, friperie de Séoul) ; c'est son histoire Vinted (« la pièce de marque là où on ne l'attend pas »).</div>
 <ul class="ex"><li><a href="https://www.youtube.com/shorts/YjkKkSFCJgo" target="_blank" rel="noopener">Fly With Johnny Thai · YouTube Shorts</a><span class="vu">lien ouvert</span><br>1 264 017 vues, médiane 51 k (×25), 02/2026 · hook : « Fit Pics In A Mall Stuck in the 90's »</li><li><a href="https://www.youtube.com/shorts/WdzkEmHGgeY" target="_blank" rel="noopener">EJWAYY · YouTube Shorts</a><span class="vu">lien ouvert</span><br>44 699 vues, médiane 4,4 k (×10), 12/2023 · hook : « CARHARTT AT WALMART ?! »</li><li><a href="https://www.youtube.com/shorts/5TomZAmQcZg" target="_blank" rel="noopener">Elliot Page · YouTube Shorts</a><span class="vu">lien ouvert</span><br>432 398 vues, ×2,2, 01/2026 · hook : « Inside The World's Largest Fake Market in China »</li><li><a href="https://www.youtube.com/shorts/AKJ_XiGdFIg" target="_blank" rel="noopener">Drew Binsky · voyage · YouTube Shorts</a><span class="vu">lien ouvert</span><br>2 936 574 vues (11/06/2023)</li></ul>
 <div class="look"><b>Le look à tourner</b> · épisode « gants » ou « bonnet » tourné dans un konbini ou un Daiso : 1re seconde = plan large du rayon avec le prix visible, lui qui entre dans le cadre ; Emilio filme à l'épaule. <br><span class=muet>Variante :</span> pendant le tour d'Asie, il marche dans une rue froide (Séoul, Hokkaido si possible) et parle de la pièce qu'il porte ; le décor fait le travail. Il tient l'iPhone.</div>
-</article><article class="carte verre top" data-v="compatible" data-n="1" data-s="fr" data-c="autre">
+<textarea class="note" data-n="04" placeholder="Une note pour cette forme (facultatif)"></textarea>
+</article><article class="carte verre top" data-v="compatible" data-n="1" data-s="fr" data-c="autre" id="f05" data-i="05" data-nom="À l'aveugle (toucher sans voir la marque)">
+<button class="coeur" data-c="05" aria-label="Coup de cœur"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9A5.2 5.2 0 0 1 12 6.4 5.2 5.2 0 0 1 21.3 12C19 16.4 12 21 12 21z"/></svg></button>
 <div class="haut"><span class="num">05</span><span class="chip gris">Francophone</span><span class="chip fort">Compatible</span><span class="chip neuf">Nouveau pour toi</span><span class="chip gris">2e personne</span></div>
 <h3>À l'aveugle (toucher sans voir la marque)</h3>
 <div class="det"><b>Pourquoi ça retient</b> : les yeux bandés retirent le prestige de la marque : le spectateur veut savoir si le cher gagne vraiment (biais de marque mis à l'épreuve).</div>
@@ -153,7 +178,9 @@ section{margin:28px 0}
 <div class="det"><b>Pour toi</b> : compatible : version mode = toucher à l'aveugle (pull 30 € contre 150 €, il devine lequel est le cher) ; ça sert directement « sous-coté ».</div>
 <ul class="ex"><li><a href="https://www.youtube.com/shorts/j17zbjI716k" target="_blank" rel="noopener">Manon Réaction · YouTube Shorts</a><span class="vu">lien ouvert</span><br>841 535 vues · hook : masque sur le front, pile de sachets de chips devant elle, « Dégustation à l'aveugle de chips Brets ! » (titre + texte à l'écran)</li><li><a href="https://www.youtube.com/shorts/wIgx3vyb2EY" target="_blank" rel="noopener">LEGEND · YouTube Shorts</a><span class="vu">lien ouvert</span><br>1 291 084 vues · hook : Etchebest se cache les yeux, « PHILIPPE ETCHEBEST GOÛTE DU VIN À L'AVEUGLE ! » (texte à l'écran)</li><li><a href="https://www.youtube.com/shorts/GqR22TEkaTs" target="_blank" rel="noopener">Tony Comiti · YouTube Shorts</a><span class="vu">lien ouvert</span><br>1 123 727 vues · hook : plans serrés de barquettes de sushis de supermarché, « Test à l'aveugle de sushis bas de gamme » (titre)</li></ul>
 <div class="look"><b>Le look à tourner</b> · gros plan des mains de Damien, yeux bandés, sur deux pulls posés sur la table ; Emilio tient l'iPhone au-dessus, vue plongeante.</div>
-</article><article class="carte verre top" data-v="compatible" data-n="1" data-s="fr hn" data-c="iphone">
+<textarea class="note" data-n="05" placeholder="Une note pour cette forme (facultatif)"></textarea>
+</article><article class="carte verre top" data-v="compatible" data-n="1" data-s="fr hn" data-c="iphone" id="f06" data-i="06" data-nom="La bulle commentaire (je réponds à un abonné)">
+<button class="coeur" data-c="06" aria-label="Coup de cœur"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9A5.2 5.2 0 0 1 12 6.4 5.2 5.2 0 0 1 21.3 12C19 16.4 12 21 12 21z"/></svg></button>
 <div class="haut"><span class="num">06</span><span class="chip gris">Francophone + Hors niche</span><span class="chip fort">Compatible</span><span class="chip neuf">Nouveau pour toi</span><span class="chip gris">iPhone seul</span></div>
 <h3>La bulle commentaire (je réponds à un abonné)</h3>
 <div class="det"><b>Pourquoi ça retient</b> : un commentaire (souvent injuste ou une demande) s'affiche à l'écran dès la première image. Ça crée un conflit ou une promesse venus de quelqu'un d'autre : le spectateur reste pour voir la réponse, et se sent représenté s'il pensait pareil.</div>
@@ -161,7 +188,9 @@ section{margin:28px 0}
 <div class="det"><b>Pour toi</b> : compatible, à condition de prendre une vraie question ou une vraie objection d'abonné (« un pull en laine ça gratte ») et pas un commentaire haineux monté en épingle (règle : pas d'accroche négative gratuite).</div>
 <ul class="ex"><li><a href="https://www.youtube.com/shorts/nyNL4wPoGxM" target="_blank" rel="noopener">Alex Cormac · YouTube Shorts</a><span class="vu">lien ouvert</span><br>1 652 622 vues · hook : bulle « La jupe c'est pour les gonzesses et les tafiouses », Alex en kilt, téléphone en main (texte à l'écran)</li><li><a href="https://www.youtube.com/shorts/ky8oAyGSLyk" target="_blank" rel="noopener">CHEZ CASTAING · YouTube Shorts</a><span class="vu">lien ouvert</span><br>11 678 665 vues · hook : bulle commentaire en haut de l'écran + « Couper un morceau de viande de 500 grammes pile » (titre ; texte de la bulle illisible)</li><li><a href="https://www.youtube.com/shorts/Dt4j-vlZt0s" target="_blank" rel="noopener">Alex Cormac · YouTube Shorts</a><span class="vu">lien ouvert</span><br>606 083 vues · hook : bulle d'un abonné qui demande une tenue + titre « TENUE ÉLÉGANTE À -100€ » (titre)</li><li>Aucune vidéo trouvée ET vérifiée. Cas documenté sans URL : la marque Brevite a répondu en vidéo au commentaire « ce sac à ~100 $ = un sac à 10 $ sur Alibaba » ; ~200 000 vues, 11 vidéos-réponses &gt; 100 000 vues, +200 % de ventes attribuées à TikTok (Glossy, 05/05/2021) · vérifiée : non (vidéo non trouvée)<span class="nv">non vérifié</span><br></li></ul>
 <div class="look"><b>Le look à tourner</b> · plan pied, Damien tient la pièce de l'épisode, la capture du commentaire collée au tiers haut pendant 2 s ; trépied, pas besoin de quelqu'un. <br><span class=muet>Variante :</span> épingler le vrai commentaire « c'est trop cher pour un pull » et répondre en montrant la pièce (étiquette de composition, couture) ; c'est l'écart valeur/prix en direct.</div>
-</article><article class="carte verre " data-v="compatible" data-n="0" data-s="hn" data-c="autre">
+<textarea class="note" data-n="06" placeholder="Une note pour cette forme (facultatif)"></textarea>
+</article><article class="carte verre " data-v="compatible" data-n="0" data-s="hn" data-c="autre" id="f07" data-i="07" data-nom="Dédoublage (deux Damien se répondent)">
+<button class="coeur" data-c="07" aria-label="Coup de cœur"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9A5.2 5.2 0 0 1 12 6.4 5.2 5.2 0 0 1 21.3 12C19 16.4 12 21 12 21z"/></svg></button>
 <div class="haut"><span class="num">07</span><span class="chip gris">Hors niche</span><span class="chip fort">Compatible</span><span class="chip gris">Déjà en tête</span><span class="chip gris">Montage AE</span></div>
 <h3>Dédoublage (deux Damien se répondent)</h3>
 <div class="det"><b>Pourquoi ça retient</b> : deux versions de la même personne = conflit immédiat (boucle ouverte : qui a raison ?) + interruption de motif visuelle (le cerveau repère tout de suite le « doublon »).</div>
@@ -169,7 +198,9 @@ section{margin:28px 0}
 
 <ul class="ex"><li><a href="https://www.youtube.com/shorts/_0_Mtsl6G28" target="_blank" rel="noopener">Yasmyn Switzer · vie perso/motivation · YouTube Shorts</a><span class="vu">lien ouvert</span><br>1 167 379 vues (mis en ligne 27/11/2022) (« Conversation with my younger self » : elle face à elle-même plus jeune, d'après le titre)</li><li><a href="https://www.youtube.com/shorts/FUVDVAtoRAQ" target="_blank" rel="noopener">Kallmekris · humour · YouTube Shorts</a><span class="vu">lien ouvert</span><br>71 104 133 vues (07/08/2023) (titre « How To Attract A Man » ; qu'elle y joue plusieurs rôles = sa marque de fabrique, non vu sur cette vidéo)</li><li><a href="https://www.youtube.com/shorts/PuMpNAwPIVI" target="_blank" rel="noopener">Ryan Wild (mode homme) · YouTube Shorts</a><span class="vu">lien ouvert</span><br>881 789 vues, 09/2026, 140 fois sa médiane · hook : « 8AM me vs 8PM me »</li></ul>
 <div class="look"><b>Le look à tourner</b> · « Damien qui veut acheter » contre « Damien qui connaît le prix juste » devant le rayon, iPhone sur trépied, 2 prises au même cadre ; Emilio fusionne en AE (masque + raccord lumière). Variante : Damien de 16 ans (période Vinted) face au Damien d'aujourd'hui.</div>
-</article><article class="carte verre " data-v="compatible" data-n="0" data-s="hn" data-c="autre">
+<textarea class="note" data-n="07" placeholder="Une note pour cette forme (facultatif)"></textarea>
+</article><article class="carte verre " data-v="compatible" data-n="0" data-s="hn" data-c="autre" id="f08" data-i="08" data-nom="Sketch de mise en situation">
+<button class="coeur" data-c="08" aria-label="Coup de cœur"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9A5.2 5.2 0 0 1 12 6.4 5.2 5.2 0 0 1 21.3 12C19 16.4 12 21 12 21z"/></svg></button>
 <div class="haut"><span class="num">08</span><span class="chip gris">Hors niche</span><span class="chip fort">Compatible</span><span class="chip gris">Déjà en tête</span><span class="chip gris">2e personne</span></div>
 <h3>Sketch de mise en situation</h3>
 <div class="det"><b>Pourquoi ça retient</b> : la situation vécue (relatable) fait se reconnaître en 1 s, puis l'exagération crée l'attente de la chute.</div>
@@ -177,7 +208,9 @@ section{margin:28px 0}
 
 <ul class="ex"><li><a href="https://www.youtube.com/shorts/pIFA9Gz1WAg" target="_blank" rel="noopener">Daniel LaBelle · humour · YouTube Shorts</a><span class="vu">lien ouvert</span><br>87 188 973 vues (22/03/2022)</li><li><a href="https://www.youtube.com/shorts/yDTCp2G6S3Y" target="_blank" rel="noopener">Daniel LaBelle · humour · YouTube Shorts</a><span class="vu">lien ouvert</span><br>48 232 987 vues (06/07/2022) (« How Different Couples Walk Together » : même situation jouée en variantes)</li></ul>
 <div class="look"><b>Le look à tourner</b> · la situation que tout le monde a vécue avec la pièce (gants qu'on retire pour le téléphone, hoodie qui bouloche au 3e lavage) jouée sans parole, Emilio filme ; la pièce de l'épisode arrive comme la solution, puis Damien enchaîne en conseil.</div>
-</article><article class="carte verre " data-v="adapter" data-n="1" data-s="fr hn en" data-c="autre">
+<textarea class="note" data-n="08" placeholder="Une note pour cette forme (facultatif)"></textarea>
+</article><article class="carte verre " data-v="adapter" data-n="1" data-s="fr hn en" data-c="autre" id="f09" data-i="09" data-nom="Micro-trottoir « combien coûte ta tenue ? »">
+<button class="coeur" data-c="09" aria-label="Coup de cœur"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9A5.2 5.2 0 0 1 12 6.4 5.2 5.2 0 0 1 21.3 12C19 16.4 12 21 12 21z"/></svg></button>
 <div class="haut"><span class="num">09</span><span class="chip gris">Francophone + Hors niche + Anglophone</span><span class="chip">À adapter</span><span class="chip neuf">Nouveau pour toi</span><span class="chip gris">2e personne</span></div>
 <h3>Micro-trottoir « combien coûte ta tenue ? »</h3>
 <div class="det"><b>Pourquoi ça retient</b> : un inconnu dans la rue, une question simple sur le prix : le spectateur devine en même temps (jeu gratuit) et compare avec ce qu'il porte.</div>
@@ -185,7 +218,9 @@ section{margin:28px 0}
 <div class="det"><b>Pour toi</b> : compatible et très dans son fil rouge (écart valeur/prix), à condition que l'épisode garde SON avis à la fin (la rue pose la question, Damien tranche).</div>
 <ul class="ex"><li><a href="https://www.youtube.com/shorts/HnjyEpXQt-Q" target="_blank" rel="noopener">Deguem Pro · YouTube Shorts</a><span class="vu">lien ouvert</span><br>229 096 vues · hook : « Combien coûte ton outfit ? » puis gros plan bonnet « 80 € » (texte à l'écran)</li><li><a href="https://www.youtube.com/shorts/suzTDED8M4Q" target="_blank" rel="noopener">ELEVENPARIS · YouTube Shorts</a><span class="vu">lien ouvert</span><br>340 965 vues · hook : groupe de passants alignés, quiz du prix façon « juste prix » (d'après le titre et les hashtags)</li><li><a href="https://www.youtube.com/shorts/oZ4MicCE7-Y" target="_blank" rel="noopener">ELEVENPARIS · YouTube Shorts</a><span class="vu">lien ouvert</span><br>129 076 vues · hook : « Et toi tu notes combien ta tenue ? » (titre)</li><li><a href="https://www.youtube.com/shorts/qj70wDLpiQA" target="_blank" rel="noopener">Citi Talks · street style · YouTube Shorts</a><span class="vu">lien ouvert</span><br>54 094 892 vues (08/02/2023)</li><li><a href="https://www.youtube.com/shorts/E2Vb5036kKs" target="_blank" rel="noopener">Pietonpinion · micro-trottoir FR · YouTube Shorts</a><span class="vu">lien ouvert</span><br>144 880 vues (13/02/2026) (en français)</li><li><a href="https://www.youtube.com/shorts/BNaQgVwAsM4" target="_blank" rel="noopener">What's Poppin? With Davis! · street style NYC · YouTube Shorts</a><span class="vu">lien ouvert</span><br>6 236 355 vues (10/10/2022)</li><li><a href="https://www.tiktok.com/@christoosmoove/video/7198915111128501547" target="_blank" rel="noopener">Christoo Smoove · TikTok</a><span class="vu">lien ouvert</span><br>13 600 000 lectures, 02/2023 · hook : « How much is your outfit worth? »</li><li><a href="https://www.tiktok.com/@samwongsx/video/7228843985895296262" target="_blank" rel="noopener">Sam Wong · TikTok</a><span class="vu">lien ouvert</span><br>148 400 lectures, 05/2023 · hook : « Expensive outfit = good outfit? How much is your outfit worth, KL edition »</li></ul>
 <div class="look"><b>Le look à tourner</b> · Emilio tient l'iPhone à hauteur de poitrine dans la rue, Damien de profil avec le micro vers un passant en doudoune ; texte « combien ? » en bas. <br><span class=muet>Variante :</span> à Tokyo/Séoul/Paris, il demande le prix d'UNE pièce de l'épisode (le manteau, les gants) ; le prix s'affiche en gros ; Damien donne son verdict valeur/prix après. Emilio ou un passant tient l'iPhone, micro-cravate.</div>
-</article><article class="carte verre " data-v="compatible" data-n="1" data-s="en hn" data-c="iphone">
+<textarea class="note" data-n="09" placeholder="Une note pour cette forme (facultatif)"></textarea>
+</article><article class="carte verre " data-v="compatible" data-n="1" data-s="en hn" data-c="iphone" id="f10" data-i="10" data-nom="Les paliers (niveau 1 → niveau 5, 1 € / 10 € / 100 €)">
+<button class="coeur" data-c="10" aria-label="Coup de cœur"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9A5.2 5.2 0 0 1 12 6.4 5.2 5.2 0 0 1 21.3 12C19 16.4 12 21 12 21z"/></svg></button>
 <div class="haut"><span class="num">10</span><span class="chip gris">Anglophone + Hors niche</span><span class="chip fort">Compatible</span><span class="chip neuf">Nouveau pour toi</span><span class="chip gris">iPhone seul</span></div>
 <h3>Les paliers (niveau 1 → niveau 5, 1 € / 10 € / 100 €)</h3>
 <div class="det"><b>Pourquoi ça retient</b> : une échelle numérotée promet une montée ; le spectateur veut voir le dernier niveau (boucle ouverte jusqu'à la fin) et se situe lui-même sur l'échelle.</div>
@@ -193,7 +228,9 @@ section{margin:28px 0}
 <div class="det"><b>Pour toi</b> : compatible — « niveau 1 : 15 € / niveau 3 : 80 € / niveau 5 : 400 € » est son écart valeur/prix en escalier, à condition de dire franchement à quel niveau ça cesse de valoir le coup.</div>
 <ul class="ex"><li><a href="https://www.youtube.com/shorts/IRY2HKLkTLE" target="_blank" rel="noopener">Fly With Johnny Thai · YouTube Shorts</a><span class="vu">lien ouvert</span><br>9 062 597 vues, médiane 51 k (×178), 09/2026 · hook : « Thrifting at a Curated 2nd Hand Store » (épisode « Level 3 » d'une série de niveaux)</li><li><a href="https://www.youtube.com/watch?v=Qg_KnqTyFnI" target="_blank" rel="noopener">Fly With Johnny Thai · YouTube (vidéo longue, pas un Short)</a><span class="vu">lien ouvert</span><br>308 802 vues · hook : « I Tried 5 Levels of Thrifting » (format long, cité pour montrer la série mère)</li><li><a href="https://www.youtube.com/shorts/rWYBHbgCN-g" target="_blank" rel="noopener">Nick DiGiovanni · cuisine · YouTube Shorts</a><span class="vu">lien ouvert</span><br>70 962 574 vues (15/08/2025)</li><li><a href="https://www.youtube.com/shorts/HOOhCErq8qc" target="_blank" rel="noopener">Trey Bryant · mode homme · YouTube Shorts</a><span class="vu">lien ouvert</span><br>204 748 vues (22/09/2025) (« $50 vs $500 vs $5000 Jacket »)</li></ul>
 <div class="look"><b>Le look à tourner</b> · épisode « pull laine » : 5 pulls pliés en pile, un chiffre « 1 » à « 5 » sur chacun ; plan zénithal, sa main qui prend le n°1 ; iPhone au-dessus de la table. <br><span class=muet>Variante :</span> 3 doudounes légères à 3 prix, posées côte à côte, prix masqués ou visibles ; il teste UN critère (compression, pluie). Emilio : écran en 3 colonnes.</div>
-</article><article class="carte verre " data-v="compatible" data-n="1" data-s="en" data-c="autre">
+<textarea class="note" data-n="10" placeholder="Une note pour cette forme (facultatif)"></textarea>
+</article><article class="carte verre " data-v="compatible" data-n="1" data-s="en" data-c="autre" id="f11" data-i="11" data-nom="Le choix délégué (Emilio ou le public tranche)">
+<button class="coeur" data-c="11" aria-label="Coup de cœur"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9A5.2 5.2 0 0 1 12 6.4 5.2 5.2 0 0 1 21.3 12C19 16.4 12 21 12 21z"/></svg></button>
 <div class="haut"><span class="num">11</span><span class="chip gris">Anglophone</span><span class="chip fort">Compatible</span><span class="chip neuf">Nouveau pour toi</span><span class="chip gris">2e personne</span></div>
 <h3>Le choix délégué (Emilio ou le public tranche)</h3>
 <div class="det"><b>Pourquoi ça retient</b> : le verdict est confié à un tiers (sa femme, le public, un tournoi) ; le spectateur parie en silence sur le choix et reste pour voir s'il avait raison, puis commente.</div>
@@ -201,7 +238,9 @@ section{margin:28px 0}
 <div class="det"><b>Pour toi</b> : compatible — il casse son propre schéma « moi + verdict » : le verdict existe, mais c'est Emilio (ou le public) qui le donne ; le format colle à la scène à deux qu'il connaît, sans sketch.</div>
 <ul class="ex"><li><a href="https://www.youtube.com/shorts/WUyFycoOOkA" target="_blank" rel="noopener">Fly With Johnny Thai · YouTube Shorts</a><span class="vu">lien ouvert</span><br>24 693 243 vues, médiane 51 k, 09/2026 (sponsorisé Kohl's) · hook : « Wifey Chooses The Best Fit (Autumn Edition) »</li><li><a href="https://www.youtube.com/shorts/hrMeahfgW2w" target="_blank" rel="noopener">One Dapper Street · YouTube Shorts</a><span class="vu">lien ouvert</span><br>188 270 vues, médiane 17 k (×11), 08/2021 · hook : « 4 Suits… Choose Your Favorite! »</li><li><a href="https://www.youtube.com/shorts/Y32CGY8mONU" target="_blank" rel="noopener">Wisdom Kaye · YouTube Shorts</a><span class="vu">lien ouvert</span><br>843 935 vues, ≈ médiane (741 k), 08/2026 · hook : « THE HIGH FASHION WORLD CUP | GROUP A. 48 countries, 48 looks. You decide the winner. »</li></ul>
 <div class="look"><b>Le look à tourner</b> · épisode « doudoune légère » : 3 doudounes sur 3 portants ou 3 cintres, lui qui les enfile une par une, Emilio tient l'iPhone et désigne la gagnante à la fin ; texte « Emilio choisit » en haut.</div>
-</article><article class="carte verre " data-v="adapter" data-n="1" data-s="fr" data-c="iphone">
+<textarea class="note" data-n="11" placeholder="Une note pour cette forme (facultatif)"></textarea>
+</article><article class="carte verre " data-v="adapter" data-n="1" data-s="fr" data-c="iphone" id="f12" data-i="12" data-nom="La contrainte imposée (le hasard décide)">
+<button class="coeur" data-c="12" aria-label="Coup de cœur"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9A5.2 5.2 0 0 1 12 6.4 5.2 5.2 0 0 1 21.3 12C19 16.4 12 21 12 21z"/></svg></button>
 <div class="haut"><span class="num">12</span><span class="chip gris">Francophone</span><span class="chip">À adapter</span><span class="chip neuf">Nouveau pour toi</span><span class="chip gris">iPhone seul</span></div>
 <h3>La contrainte imposée (le hasard décide)</h3>
 <div class="det"><b>Pourquoi ça retient</b> : le créateur ne choisit pas : une roue, un tirage, un « achat au hasard » ou un hater impose. Le résultat est inconnu pour lui aussi, donc la boucle ouverte est réelle (« qu'est-ce qui va tomber ? »).</div>
@@ -209,7 +248,9 @@ section{margin:28px 0}
 <div class="det"><b>Pour toi</b> : à adapter : le hasard doit rester dans le budget et la catégorie de l'épisode (ex. une écharpe tirée au sort sur Vinted sous 20 €), sinon on perd le « guider ».</div>
 <ul class="ex"><li><a href="https://www.youtube.com/shorts/VOlnDTMrFmI" target="_blank" rel="noopener">La Routine · YouTube Shorts</a><span class="vu">lien ouvert</span><br>1 951 481 vues · hook : « ACHETER une SNEAKERS au HASARD sur STOCKX » (titre), capture StockX à l'écran</li><li><a href="https://www.youtube.com/shorts/Xo8rGFBIOtM" target="_blank" rel="noopener">La Routine · YouTube Shorts</a><span class="vu">lien ouvert</span><br>860 585 vues · hook : il ouvre un carton face caméra, « J'ai acheté deux paires de sneakers au hasard sur Vinted » (texte à l'écran)</li><li><a href="https://www.youtube.com/shorts/lgsIiIRHipg" target="_blank" rel="noopener">lilyslilah · YouTube Shorts</a><span class="vu">lien ouvert</span><br>9 299 006 vues · hook : roue de couleurs (filtre) qui tourne au-dessus de sa tête, « le filtre choisit ma tenue » (titre)</li><li><a href="https://www.youtube.com/shorts/fi_eEsX_UGk" target="_blank" rel="noopener">SunLight · YouTube Shorts</a><span class="vu">lien ouvert</span><br>734 083 vues · hook : debout devant un portant, micro en main, « Je m'habille comme mon hater » + bulle commentaire (texte à l'écran)</li></ul>
 <div class="look"><b>Le look à tourner</b> · iPhone sur trépied, Damien assis, écran de son téléphone filmé en gros plan (ou inséré) au moment du tirage, puis le colis ouvert face caméra.</div>
-</article><article class="carte verre " data-v="compatible" data-n="1" data-s="en" data-c="iphone">
+<textarea class="note" data-n="12" placeholder="Une note pour cette forme (facultatif)"></textarea>
+</article><article class="carte verre " data-v="compatible" data-n="1" data-s="en" data-c="iphone" id="f13" data-i="13" data-nom="La permission (« tu PEUX… »)">
+<button class="coeur" data-c="13" aria-label="Coup de cœur"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9A5.2 5.2 0 0 1 12 6.4 5.2 5.2 0 0 1 21.3 12C19 16.4 12 21 12 21z"/></svg></button>
 <div class="haut"><span class="num">13</span><span class="chip gris">Anglophone</span><span class="chip fort">Compatible</span><span class="chip neuf">Nouveau pour toi</span><span class="chip gris">iPhone seul</span></div>
 <h3>La permission (« tu PEUX… »)</h3>
 <div class="det"><b>Pourquoi ça retient</b> : lève une interdiction que le spectateur s'est mise lui-même (« la couleur, c'est pas pour moi ») ; il reste pour savoir comment, et se sent compris plutôt que corrigé.</div>
@@ -217,7 +258,9 @@ section{margin:28px 0}
 <div class="det"><b>Pour toi</b> : compatible — c'est son conseil honnête (« une doudoune à 200 € suffit ») retourné en autorisation ; aucun mot hype, promesse tenue si la vidéo donne la méthode.</div>
 <ul class="ex"><li><a href="https://www.youtube.com/shorts/QL1NE8CzzqA" target="_blank" rel="noopener">Tim Dessaint · YouTube Shorts</a><span class="vu">lien ouvert</span><br>5 722 463 vues, médiane chaîne 645 k, publié 08/2021 · hook : « You CAN Wear Color »</li><li><a href="https://www.youtube.com/shorts/s66fzUP7l3U" target="_blank" rel="noopener">Tim Dessaint · YouTube Shorts</a><span class="vu">lien ouvert</span><br>3 694 679 vues, 06/2021 · hook : « You CAN Dress Better »</li><li><a href="https://www.youtube.com/shorts/okvQsunRmAE" target="_blank" rel="noopener">Allison Bornstein · YouTube Shorts</a><span class="vu">lien ouvert</span><br>19 207 vues, médiane chaîne 2 100 (×9), 03/2025 · hook : « Timelessness does not have to be the goal! »</li></ul>
 <div class="look"><b>Le look à tourner</b> · épisode « gants » : plan poitrine à hauteur d'yeux, lui qui enfile des gants en cuir colorés au lieu de noirs, texte à l'écran en 3 mots max ; iPhone sur trépied, pas de verdict, une autorisation.</div>
-</article><article class="carte verre " data-v="compatible" data-n="1" data-s="en" data-c="iphone">
+<textarea class="note" data-n="13" placeholder="Une note pour cette forme (facultatif)"></textarea>
+</article><article class="carte verre " data-v="compatible" data-n="1" data-s="en" data-c="iphone" id="f14" data-i="14" data-nom="La règle qui porte un nom">
+<button class="coeur" data-c="14" aria-label="Coup de cœur"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9A5.2 5.2 0 0 1 12 6.4 5.2 5.2 0 0 1 21.3 12C19 16.4 12 21 12 21z"/></svg></button>
 <div class="haut"><span class="num">14</span><span class="chip gris">Anglophone</span><span class="chip fort">Compatible</span><span class="chip neuf">Nouveau pour toi</span><span class="chip gris">iPhone seul</span></div>
 <h3>La règle qui porte un nom</h3>
 <div class="det"><b>Pourquoi ça retient</b> : un nom propre (« wrong shoe theory », « 3 colour rule ») rend une astuce mémorisable et partageable ; le spectateur reste pour comprendre la règle, puis la ressort à ses amis (et d'autres créateurs la reprennent).</div>
@@ -225,7 +268,9 @@ section{margin:28px 0}
 <div class="det"><b>Pour toi</b> : compatible si la règle est la sienne et vérifiable (ex. sa règle valeur/prix) ; jamais une « théorie » creuse : le nom ne promet que ce que la démonstration tient.</div>
 <ul class="ex"><li><a href="https://www.tiktok.com/@allisonbornstein6/video/7367770414291930414" target="_blank" rel="noopener">Allison Bornstein · TikTok</a><span class="vu">lien ouvert</span><br>120 600 lectures, 05/2024 · hook : « the wrong shoe theory »</li><li><a href="https://www.tiktok.com/@vicmontanari/video/7328454960704703749" target="_blank" rel="noopener">Vic Montanari (reprise par une autre créatrice) · TikTok</a><span class="vu">lien ouvert</span><br>476 400 lectures, 01/2024 · hook : « the wrong-shoe theory applied »</li><li><a href="https://www.youtube.com/shorts/ZrPrkkqbdx8" target="_blank" rel="noopener">Brandon Balfour · YouTube Shorts</a><span class="vu">lien ouvert</span><br>1 136 822 vues, médiane 200 k (×5,7), 06/2024 · hook : « Follow This Formula For A Perfect Summer Outfit »</li></ul>
 <div class="look"><b>Le look à tourner</b> · épisode « trois couches » : le nom de la règle en gros texte sur un plan large où il est déjà habillé, puis il retire une couche par plan ; iPhone fixe, cadre identique d'un plan à l'autre.</div>
-</article><article class="carte verre " data-v="adapter" data-n="1" data-s="en fr" data-c="iphone">
+<textarea class="note" data-n="14" placeholder="Une note pour cette forme (facultatif)"></textarea>
+</article><article class="carte verre " data-v="adapter" data-n="1" data-s="en fr" data-c="iphone" id="f15" data-i="15" data-nom="Le personnage connu (décodé, ou copié)">
+<button class="coeur" data-c="15" aria-label="Coup de cœur"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9A5.2 5.2 0 0 1 12 6.4 5.2 5.2 0 0 1 21.3 12C19 16.4 12 21 12 21z"/></svg></button>
 <div class="haut"><span class="num">15</span><span class="chip gris">Anglophone + Francophone</span><span class="chip">À adapter</span><span class="chip neuf">Nouveau pour toi</span><span class="chip gris">iPhone seul</span></div>
 <h3>Le personnage connu (décodé, ou copié)</h3>
 <div class="det"><b>Pourquoi ça retient</b> : on emprunte la curiosité qu'on a déjà pour une personne connue (« pourquoi il a toujours l'air bien habillé ? ») et on la transforme en méthode applicable ; le visage connu arrête le pouce.</div>
@@ -233,7 +278,9 @@ section{margin:28px 0}
 <div class="det"><b>Pour toi</b> : à adapter — choisir une personne que son public connaît (footballeur, rappeur, acteur FR) et décoder une pièce d'hiver accessible, pas son budget ; pas de « il est trop stylé ».</div>
 <ul class="ex"><li><a href="https://www.youtube.com/shorts/TX46ZV7THcQ" target="_blank" rel="noopener">Allison Bornstein · YouTube Shorts</a><span class="vu">lien ouvert</span><br>269 068 vues, médiane 2 100 (×128), 02/2025 · hook : « 3 Word Method Examples : CAROLYN BESSETTE-KENNEDY »</li><li><a href="https://www.youtube.com/shorts/ySUBlTdZ3DM" target="_blank" rel="noopener">Allison Bornstein · YouTube Shorts</a><span class="nv">non vérifié</span><br>~42 000 vues (liste chaîne, relevé 13/11/2026), ×20 la médiane · hook : « 3 Word Method Examples : MARY KATE AND ASHLEY » (vue dans la liste de la chaîne, page non ouverte)</li><li><a href="https://www.youtube.com/shorts/VEUounyZO1U" target="_blank" rel="noopener">Tim Dessaint · YouTube Shorts</a><span class="vu">lien ouvert</span><br>702 628 vues, au niveau de sa médiane (645 k), 04/2026 · hook : « Why Jacob Elordi always looks effortlessly stylish »</li><li><a href="https://www.youtube.com/shorts/uxn5ONJmVtw" target="_blank" rel="noopener">Birmingham Wear · YouTube Shorts</a><span class="vu">lien ouvert</span><br>6 808 729 vues · hook : Thomas Shelby qui marche vers la caméra, « Comment s'habiller comme les Peaky Blinders » (texte à l'écran)</li><li><a href="https://www.youtube.com/shorts/XlEzf34-Tj8" target="_blank" rel="noopener">Alex Cormac · YouTube Shorts</a><span class="vu">lien ouvert</span><br>483 167 vues · hook : « COMMENT JE M'HABILLE ? » en gros, Alex entre dans le cadre (texte à l'écran), « S'HABILLER COMME JAMES BOND » (titre)</li><li><a href="https://www.youtube.com/shorts/l7xpIR4ePbE" target="_blank" rel="noopener">Alex Cormac · YouTube Shorts</a><span class="vu">lien ouvert</span><br>930 437 vues · hook : « COMMENT JE M'HABILLE ? » puis « En président de la République » (texte à l'écran + titre)</li></ul>
 <div class="look"><b>Le look à tourner</b> · épisode « veste workwear » : photo de la personne en plein écran la 1re seconde, lui en incrustation (green screen CapCut) qui montre l'équivalent qu'il porte ; tourné seul face iPhone. <br><span class=muet>Variante :</span> photo du personnage plein écran 1 s, coupe sur Damien qui entre dans le cadre avec la même silhouette ; iPhone sur trépied dans le couloir, plan pied.</div>
-</article><article class="carte verre " data-v="compatible" data-n="1" data-s="fr" data-c="iphone">
+<textarea class="note" data-n="15" placeholder="Une note pour cette forme (facultatif)"></textarea>
+</article><article class="carte verre " data-v="compatible" data-n="1" data-s="fr" data-c="iphone" id="f16" data-i="16" data-nom="La une derrière moi (l'article en fond)">
+<button class="coeur" data-c="16" aria-label="Coup de cœur"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9A5.2 5.2 0 0 1 12 6.4 5.2 5.2 0 0 1 21.3 12C19 16.4 12 21 12 21z"/></svg></button>
 <div class="haut"><span class="num">16</span><span class="chip gris">Francophone</span><span class="chip fort">Compatible</span><span class="chip neuf">Nouveau pour toi</span><span class="chip gris">iPhone seul</span></div>
 <h3>La une derrière moi (l'article en fond)</h3>
 <div class="det"><b>Pourquoi ça retient</b> : une capture d'article ou une photo de célébrité derrière le créateur : l'actu donne l'intérêt, le créateur donne l'avis d'expert (on emprunte l'attention d'un sujet déjà chaud).</div>
@@ -241,7 +288,9 @@ section{margin:28px 0}
 <div class="det"><b>Pour toi</b> : compatible (il a déjà prouvé que l'actu d'une marque marche chez lui) ; règle : pas de « horribles » gratuit, l'avis doit être utile (« ce que ça coûte vraiment, ce que tu peux prendre à la place »).</div>
 <ul class="ex"><li><a href="https://www.youtube.com/shorts/g1ZKnSNjLrs" target="_blank" rel="noopener">Alex Cormac · YouTube Shorts</a><span class="vu">lien ouvert</span><br>1 495 930 vues · hook : capture d'article sur les costumes de Macron en fond, Alex en bas (texte à l'écran)</li><li><a href="https://www.youtube.com/shorts/MyoMTLvX18E" target="_blank" rel="noopener">Alex Cormac · YouTube Shorts</a><span class="vu">lien ouvert</span><br>1 290 212 vues · hook : Trump en fond, Alex en costume au premier plan, « LES COSTUMES DE TRUMP SONT HORRIBLES » (titre)</li><li><a href="https://www.youtube.com/shorts/XpnuanBPC1U" target="_blank" rel="noopener">Antton Racca · YouTube Shorts</a><span class="vu">lien ouvert</span><br>9 460 294 vues · hook : Michael Jackson en haut, Antton en bas, « Est-ce que tu savais que si Michael Jackson… » (texte à l'écran)</li></ul>
 <div class="look"><b>Le look à tourner</b> · capture de l'article (soldes Uniqlo, prix d'une doudoune portée par un footballeur) plein écran, Damien en fond vert en bas à droite, la pièce équivalente en main.</div>
-</article><article class="carte verre " data-v="compatible" data-n="1" data-s="en" data-c="iphone">
+<textarea class="note" data-n="16" placeholder="Une note pour cette forme (facultatif)"></textarea>
+</article><article class="carte verre " data-v="compatible" data-n="1" data-s="en" data-c="iphone" id="f17" data-i="17" data-nom="La substitution (« n'achète pas X, prends Y »)">
+<button class="coeur" data-c="17" aria-label="Coup de cœur"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9A5.2 5.2 0 0 1 12 6.4 5.2 5.2 0 0 1 21.3 12C19 16.4 12 21 12 21z"/></svg></button>
 <div class="haut"><span class="num">17</span><span class="chip gris">Anglophone</span><span class="chip fort">Compatible</span><span class="chip neuf">Nouveau pour toi</span><span class="chip gris">iPhone seul</span></div>
 <h3>La substitution (« n'achète pas X, prends Y »)</h3>
 <div class="det"><b>Pourquoi ça retient</b> : on nomme un achat que le spectateur a déjà fait ou prévoit, puis on le détourne ; la petite peur « j'ai mal acheté ? » tient jusqu'à la révélation de Y.</div>
@@ -249,7 +298,9 @@ section{margin:28px 0}
 <div class="det"><b>Pour toi</b> : compatible — pile l'écart valeur/prix, à condition que Y soit vraiment meilleur pour le prix (sinon c'est du racolage) ; attention, « stop / don't » est un ordre : varier avec une forme douce.</div>
 <ul class="ex"><li><a href="https://www.youtube.com/shorts/Q9zgCYxn_xU" target="_blank" rel="noopener">Brock McGoff · YouTube Shorts</a><span class="vu">lien ouvert</span><br>1 513 034 vues, médiane 12 k (×126), 05/2025 · hook : « Don't buy a Casio F91W...buy THIS instead! »</li><li><a href="https://www.youtube.com/shorts/O90hKrYrBJo" target="_blank" rel="noopener">Alex Costa · YouTube Shorts</a><span class="vu">lien ouvert</span><br>2 352 536 vues, médiane 271 k (×8,7), 05/2023 · hook : « Stop washing your clothes after EVERY wear (Do this instead) »</li></ul>
 <div class="look"><b>Le look à tourner</b> · épisode « hoodie » : les deux hoodies côte à côte sur le lit, sa main qui retire celui de la marque connue du cadre ; plan zénithal iPhone fixé au-dessus.</div>
-</article><article class="carte verre " data-v="adapter" data-n="0" data-s="hn fr" data-c="iphone">
+<textarea class="note" data-n="17" placeholder="Une note pour cette forme (facultatif)"></textarea>
+</article><article class="carte verre " data-v="adapter" data-n="0" data-s="hn fr" data-c="iphone" id="f18" data-i="18" data-nom="Ce que je n'achèterais jamais (règle absolue, autorité métier)">
+<button class="coeur" data-c="18" aria-label="Coup de cœur"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9A5.2 5.2 0 0 1 12 6.4 5.2 5.2 0 0 1 21.3 12C19 16.4 12 21 12 21z"/></svg></button>
 <div class="haut"><span class="num">18</span><span class="chip gris">Hors niche + Francophone</span><span class="chip">À adapter</span><span class="chip gris">Recoupe « N erreurs » et « contrarien »</span><span class="chip gris">iPhone seul</span></div>
 <h3>Ce que je n'achèterais jamais (règle absolue, autorité métier)</h3>
 <div class="det"><b>Pourquoi ça retient</b> : l'expertise + la négation (« jamais ») = conseil de protection (aversion à la perte).</div>
@@ -257,7 +308,9 @@ section{margin:28px 0}
 
 <ul class="ex"><li><a href="https://www.youtube.com/shorts/GZCW7pcXaJg" target="_blank" rel="noopener">Law By Mike · droit · YouTube Shorts</a><span class="vu">lien ouvert</span><br>61 310 965 vues (02/05/2025)</li><li><a href="https://www.youtube.com/shorts/iTujSY0akq0" target="_blank" rel="noopener">linastips · conso/économies · YouTube Shorts</a><span class="vu">lien ouvert</span><br>9 097 841 vues (26/11/2024) (« 5 products I don't buy »)</li><li><a href="https://www.youtube.com/shorts/J0Wh6fVMphY" target="_blank" rel="noopener">Alex Cormac · YouTube Shorts</a><span class="vu">lien ouvert</span><br>976 292 vues · hook : face caméra en trois-pièces, « NE JAMAIS LAVER UN COSTUME ! » (titre)</li><li><a href="https://www.youtube.com/shorts/iW5nfyIo_-w" target="_blank" rel="noopener">Alex Cormac · YouTube Shorts</a><span class="vu">lien ouvert</span><br>807 290 vues · hook : Alex en pied puis photo d'une tenue multicolore, « Ne jamais porter plus de 3 couleurs » (texte à l'écran)</li></ul>
 <div class="look"><b>Le look à tourner</b> · en rayon, il montre du doigt les pièces qu'il ne prendrait jamais (doudoune 100 % polyester au prix du duvet) avant la bonne référence ; c'est sa légitimité « 10 ans de bons plans ». <br><span class=muet>Variante :</span> la pièce posée sur le geste interdit (pull sur cintre, doudoune au sèche-linge) en premier plan, Damien qui l'enlève du cadre ; trépied fixe.</div>
-</article><article class="carte verre " data-v="compatible" data-n="1" data-s="en fr" data-c="iphone">
+<textarea class="note" data-n="18" placeholder="Une note pour cette forme (facultatif)"></textarea>
+</article><article class="carte verre " data-v="compatible" data-n="1" data-s="en fr" data-c="iphone" id="f19" data-i="19" data-nom="Les détails qui prouvent (checklist, vrai contre faux)">
+<button class="coeur" data-c="19" aria-label="Coup de cœur"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9A5.2 5.2 0 0 1 12 6.4 5.2 5.2 0 0 1 21.3 12C19 16.4 12 21 12 21z"/></svg></button>
 <div class="haut"><span class="num">19</span><span class="chip gris">Anglophone + Francophone</span><span class="chip fort">Compatible</span><span class="chip neuf">Nouveau pour toi</span><span class="chip gris">iPhone seul</span></div>
 <h3>Les détails qui prouvent (checklist, vrai contre faux)</h3>
 <div class="det"><b>Pourquoi ça retient</b> : « ce n'est pas un vrai X sans ces N détails » donne au spectateur un pouvoir (reconnaître la qualité) ; chaque détail est une micro-récompense, et on reste pour vérifier sur sa propre pièce.</div>
@@ -265,7 +318,9 @@ section{margin:28px 0}
 <div class="det"><b>Pour toi</b> : compatible — c'est son fil rouge valeur/prix rendu visible (couture, garnissage, laine) ; le « vrai/faux » de contrefaçons est à éviter (racolage + risque marque), la checklist qualité non.</div>
 <ul class="ex"><li><a href="https://www.youtube.com/shorts/fM8443pNqas" target="_blank" rel="noopener">Gentleman's Gazette · YouTube Shorts</a><span class="vu">lien ouvert</span><br>107 976 vues, médiane 30 k (×3,6), publié le 10/11/2026 · hook : « It's Not a Real Trench Coat Without These 7 Details »</li><li><a href="https://www.youtube.com/shorts/FufC-wRRK7E" target="_blank" rel="noopener">Elliot Page · YouTube Shorts</a><span class="vu">lien ouvert</span><br>606 945 vues, ×3, 09/2026 · hook : « Real vs Fake Nike Mind Slide »</li><li><a href="https://www.tiktok.com/@shiftfashiongroup/video/7399015039891442950" target="_blank" rel="noopener">Shift Fashion Group · TikTok</a><span class="vu">lien ouvert</span><br>951 500 lectures, 08/2024 · hook : « Alo quality is just not where it needs to be to justify the price »</li><li><a href="https://www.youtube.com/shorts/DShxtRuK2TI" target="_blank" rel="noopener">CHEZ CASTAING · YouTube Shorts</a><span class="vu">lien ouvert</span><br>8 082 861 vues · hook : plan client devant la vitrine, « Papa ? » puis un steak tenu face caméra, « Un « faux » et un vrai steak haché » (titre)</li><li><a href="https://www.youtube.com/shorts/hgMpEPZL8H0" target="_blank" rel="noopener">SwaveKiqs · YouTube Shorts</a><span class="vu">lien ouvert</span><br>913 530 vues · hook : boîtes Nike posées sur le comptoir d'une boutique, « Il M'Amène 8 Paires Dont 2 FAKES ?! » (titre)</li><li><a href="https://www.youtube.com/shorts/2kDqjPKN3cY" target="_blank" rel="noopener">La Routine · YouTube Shorts</a><span class="vu">lien ouvert</span><br>1 564 830 vues · hook : face caméra puis paire en main, « Les FAKES SNEAKERS de DHGATE » (titre)</li></ul>
 <div class="look"><b>Le look à tourner</b> · épisode « pull laine » : macro sur l'étiquette de composition puis sur la maille étirée entre deux doigts, sa voix off ; iPhone en mode macro tenu par lui, pas de visage la 1re seconde. <br><span class=muet>Variante :</span> deux pièces étalées sur une table claire, la main de Damien qui en retourne l'étiquette ; plongée, iPhone au-dessus tenu par Emilio.</div>
-</article><article class="carte verre " data-v="compatible" data-n="1" data-s="fr" data-c="iphone">
+<textarea class="note" data-n="19" placeholder="Une note pour cette forme (facultatif)"></textarea>
+</article><article class="carte verre " data-v="compatible" data-n="1" data-s="fr" data-c="iphone" id="f20" data-i="20" data-nom="Les mains de l'artisan (l'atelier)">
+<button class="coeur" data-c="20" aria-label="Coup de cœur"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9A5.2 5.2 0 0 1 12 6.4 5.2 5.2 0 0 1 21.3 12C19 16.4 12 21 12 21z"/></svg></button>
 <div class="haut"><span class="num">20</span><span class="chip gris">Francophone</span><span class="chip fort">Compatible</span><span class="chip neuf">Nouveau pour toi</span><span class="chip gris">iPhone seul</span></div>
 <h3>Les mains de l'artisan (l'atelier)</h3>
 <div class="det"><b>Pourquoi ça retient</b> : on voit un geste précis et inconnu dès la première image : la curiosité du « comment c'est fait » + une phrase-enjeu (« cette machine va sauver la France ») qui dit pourquoi ça compte.</div>
@@ -273,7 +328,9 @@ section{margin:28px 0}
 <div class="det"><b>Pour toi</b> : compatible en Asie (atelier de doudounes, tricot, foire de Canton) : le geste prouve la valeur ; à éviter s'il n'a pas accès à un vrai atelier (pas de fausse coulisse).</div>
 <ul class="ex"><li><a href="https://www.youtube.com/shorts/ZVm4Dg01Zqg" target="_blank" rel="noopener">Remarche · YouTube Shorts</a><span class="vu">lien ouvert</span><br>748 133 vues · hook : mains + chaussure dans une machine, « Cette machine va sauver la France ! » (texte à l'écran)</li><li><a href="https://www.youtube.com/shorts/virv2b2vV1c" target="_blank" rel="noopener">Remarche · YouTube Shorts</a><span class="vu">lien ouvert</span><br>7 376 537 vues · hook : vieux sac posé sur l'établi, « CE HERMÈS EST VERT ?! » (texte à l'écran)</li><li><a href="https://www.youtube.com/shorts/86J19oAorBA" target="_blank" rel="noopener">AVRE (Explore Media) · YouTube Shorts</a><span class="vu">lien ouvert</span><br>3 945 616 vues · hook : artisan en blouse qui tient le trophée, « VOICI COMMENT EST FABRIQUÉ LE BALLON D'OR » (texte à l'écran)</li></ul>
 <div class="look"><b>Le look à tourner</b> · gros plan sur les mains d'un ouvrier qui coud ou tricote, Damien hors champ ; iPhone tenu par Damien lui-même, très près ; texte = l'enjeu en une ligne.</div>
-</article><article class="carte verre " data-v="compatible" data-n="0" data-s="fr" data-c="iphone">
+<textarea class="note" data-n="20" placeholder="Une note pour cette forme (facultatif)"></textarea>
+</article><article class="carte verre " data-v="compatible" data-n="0" data-s="fr" data-c="iphone" id="f21" data-i="21" data-nom="La plus-value (payé 15 €, ça vaut 300 €)">
+<button class="coeur" data-c="21" aria-label="Coup de cœur"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9A5.2 5.2 0 0 1 12 6.4 5.2 5.2 0 0 1 21.3 12C19 16.4 12 21 12 21z"/></svg></button>
 <div class="haut"><span class="num">21</span><span class="chip gris">Francophone</span><span class="chip fort">Compatible</span><span class="chip gris">Variante de « prix contre prix »</span><span class="chip gris">iPhone seul</span></div>
 <h3>La plus-value (payé 15 €, ça vaut 300 €)</h3>
 <div class="det"><b>Pourquoi ça retient</b> : un chiffre d'arrivée bien plus gros que le prix de départ : l'écart lui-même est la boucle ouverte (« comment c'est possible ? »).</div>
@@ -281,7 +338,9 @@ section{margin:28px 0}
 <div class="det"><b>Pour toi</b> : compatible : c'est son histoire de départ (cargo Carhartt à 3 €) ; règle : le chiffre doit être vrai et vérifiable, jamais gonflé.</div>
 <ul class="ex"><li><a href="https://www.youtube.com/shorts/Eo205ceyMQk" target="_blank" rel="noopener">Remarche · YouTube Shorts</a><span class="vu">lien ouvert</span><br>1 633 243 vues · hook : mains sur un vieux cartable en cuir, « TRANSFORMEZ 1€ EN 100€ ! » (texte à l'écran)</li><li><a href="https://www.youtube.com/shorts/5qf_FrwORhY" target="_blank" rel="noopener">Virgil Dutilleul · YouTube Shorts</a><span class="vu">lien ouvert</span><br>801 170 vues · hook : assis face caméra, « J'ai acheté cette veste Stone Island 15€ » (texte à l'écran)</li><li><a href="https://www.youtube.com/shorts/CLOGoG7cPbw" target="_blank" rel="noopener">La Routine · YouTube Shorts</a><span class="vu">lien ouvert</span><br>2 336 087 vues · hook : paire en main, « j'ai… 7000 €… sneakers » (texte à l'écran), « Cette SNEAKERS se REVEND 7000€ » (titre)</li></ul>
 <div class="look"><b>Le look à tourner</b> · gros plan main qui tient l'étiquette de prix de friperie à côté du logo, puis la pièce portée ; Damien tient l'iPhone, Emilio pas nécessaire.</div>
-</article><article class="carte verre " data-v="compatible" data-n="1" data-s="en fr" data-c="iphone">
+<textarea class="note" data-n="21" placeholder="Une note pour cette forme (facultatif)"></textarea>
+</article><article class="carte verre " data-v="compatible" data-n="1" data-s="en fr" data-c="iphone" id="f22" data-i="22" data-nom="Toute la gamme sur la table (même cadre, tout comparé)">
+<button class="coeur" data-c="22" aria-label="Coup de cœur"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9A5.2 5.2 0 0 1 12 6.4 5.2 5.2 0 0 1 21.3 12C19 16.4 12 21 12 21z"/></svg></button>
 <div class="haut"><span class="num">22</span><span class="chip gris">Anglophone + Francophone</span><span class="chip fort">Compatible</span><span class="chip neuf">Nouveau pour toi</span><span class="chip gris">iPhone seul</span></div>
 <h3>Toute la gamme sur la table (même cadre, tout comparé)</h3>
 <div class="det"><b>Pourquoi ça retient</b> : même cadre, même pose, seule la pièce change (« every fit compared ») ; l'œil compare tout seul et le spectateur reste pour trouver « la sienne », puis enregistre la vidéo.</div>
@@ -289,7 +348,9 @@ section{margin:28px 0}
 <div class="det"><b>Pour toi</b> : compatible — format court, sans hook parlé, idéal pour un épisode « quelle coupe / quel poids de doudoune » ; ne marche que si le cadre est strictement identique.</div>
 <ul class="ex"><li><a href="https://www.youtube.com/shorts/WRvoigDvwiY" target="_blank" rel="noopener">Brock McGoff · YouTube Shorts</a><span class="vu">lien ouvert</span><br>1 121 855 vues, médiane 12 k (×93), 02/2024, 22 s · hook : « Every Levi's Jeans Fit Compared »</li><li><a href="https://www.youtube.com/shorts/ymBU04iWeks" target="_blank" rel="noopener">Tim Dessaint · YouTube Shorts</a><span class="nv">non vérifié</span><br>~476 000 vues (liste chaîne, relevé 13/11/2026), sous sa médiane · hook : « Which Onitsuka Tiger Mexico 66 Is Most Comfortable? » (vue dans la liste de la chaîne, page non ouverte)</li><li><a href="https://www.youtube.com/shorts/SwPqOwhDm6I" target="_blank" rel="noopener">Antton Racca · YouTube Shorts</a><span class="vu">lien ouvert</span><br>3 929 809 vues · hook : table de bouteilles d'eau, « J'ai acheté / les plus / de France », puis « une arnaque » (texte à l'écran)</li><li><a href="https://www.youtube.com/shorts/Bs7vfSJS8Mg" target="_blank" rel="noopener">Antton Racca · YouTube Shorts</a><span class="vu">lien ouvert</span><br>4 694 172 vues · hook : « J'ai testé les calendriers de l'avent les plus vendus en France ! » (titre ; images non regardées)</li><li><a href="https://www.youtube.com/shorts/LBuQzX8565M" target="_blank" rel="noopener">Antton Racca · YouTube Shorts</a><span class="vu">lien ouvert</span><br>3 220 728 vues · hook : « J'ai acheté les croissants les plus chers de France ! » (titre ; images non regardées)</li></ul>
 <div class="look"><b>Le look à tourner</b> · épisode « doudoune légère » : iPhone sur trépied, plan pied fixe, il change de doudoune en cut sec à chaque plan, nom + prix en étiquette en haut ; 20-25 s, pas de voix la 1re seconde. <br><span class=muet>Variante :</span> Damien assis derrière une table où les 4 paires de gants (ou chaussettes) sont alignées par prix croissant, plan fixe large sur trépied.</div>
-</article><article class="carte verre " data-v="adapter" data-n="1" data-s="hn" data-c="iphone">
+<textarea class="note" data-n="22" placeholder="Une note pour cette forme (facultatif)"></textarea>
+</article><article class="carte verre " data-v="adapter" data-n="1" data-s="hn" data-c="iphone" id="f23" data-i="23" data-nom="L'objet en main, avant tout visage">
+<button class="coeur" data-c="23" aria-label="Coup de cœur"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9A5.2 5.2 0 0 1 12 6.4 5.2 5.2 0 0 1 21.3 12C19 16.4 12 21 12 21z"/></svg></button>
 <div class="haut"><span class="num">23</span><span class="chip gris">Hors niche</span><span class="chip">À adapter</span><span class="chip neuf">Nouveau pour toi</span><span class="chip gris">iPhone seul</span></div>
 <h3>L'objet en main, avant tout visage</h3>
 <div class="det"><b>Pourquoi ça retient</b> : l'objet entre dans le champ avant tout mot : le cerveau identifie l'objet en ~1 s (cf. rappel publicitaire à 1 s, volet 2) ; le superlatif vérifiable promet un test.</div>
@@ -297,7 +358,9 @@ section{margin:28px 0}
 
 <ul class="ex"><li><a href="https://www.youtube.com/shorts/HRqPtBXJTSs" target="_blank" rel="noopener">Mrwhosetheboss · tech · YouTube Shorts</a><span class="vu">lien ouvert</span><br>104 917 938 vues (20/12/2023)</li></ul>
 <div class="look"><b>Le look à tourner</b> · la main pose la pièce sur la table (bruit sec, gros plan), avant tout visage ; puis le test qui prouve (ex. gant sous l'eau froide). Emilio : plan main en macro + son.</div>
-</article><article class="carte verre " data-v="compatible" data-n="1" data-s="hn" data-c="autre">
+<textarea class="note" data-n="23" placeholder="Une note pour cette forme (facultatif)"></textarea>
+</article><article class="carte verre " data-v="compatible" data-n="1" data-s="hn" data-c="autre" id="f24" data-i="24" data-nom="Le résultat d'abord (on ouvre sur la fin)">
+<button class="coeur" data-c="24" aria-label="Coup de cœur"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9A5.2 5.2 0 0 1 12 6.4 5.2 5.2 0 0 1 21.3 12C19 16.4 12 21 12 21z"/></svg></button>
 <div class="haut"><span class="num">24</span><span class="chip gris">Hors niche</span><span class="chip fort">Compatible</span><span class="chip neuf">Nouveau pour toi</span><span class="chip gris">2e personne</span></div>
 <h3>Le résultat d'abord (on ouvre sur la fin)</h3>
 <div class="det"><b>Pourquoi ça retient</b> : on donne la récompense en 1re image puis on remonte au « comment » ; la question devient « comment on en arrive là ? ».</div>
@@ -305,7 +368,9 @@ section{margin:28px 0}
 
 <ul class="ex"><li><a href="https://www.youtube.com/shorts/7NYTUbNzKek" target="_blank" rel="noopener">Trendy Chef · cuisine · YouTube Shorts</a><span class="vu">lien ouvert</span><br>27 895 980 vues (20/06/2025) (lien titre/forme d'après le titre seulement)</li></ul>
 <div class="look"><b>Le look à tourner</b> · 1re image = la tenue complète finie dans la neige/le vent, puis retour aux pièces une par une. Emilio fait le « rembobinage » au montage.</div>
-</article><article class="carte verre " data-v="adapter" data-n="1" data-s="hn" data-c="autre">
+<textarea class="note" data-n="24" placeholder="Une note pour cette forme (facultatif)"></textarea>
+</article><article class="carte verre " data-v="adapter" data-n="1" data-s="hn" data-c="autre" id="f25" data-i="25" data-nom="Silence + geste (zéro parole 3 s)">
+<button class="coeur" data-c="25" aria-label="Coup de cœur"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9A5.2 5.2 0 0 1 12 6.4 5.2 5.2 0 0 1 21.3 12C19 16.4 12 21 12 21z"/></svg></button>
 <div class="haut"><span class="num">25</span><span class="chip gris">Hors niche</span><span class="chip">À adapter</span><span class="chip neuf">Nouveau pour toi</span><span class="chip gris">2e personne</span></div>
 <h3>Silence + geste (zéro parole 3 s)</h3>
 <div class="det"><b>Pourquoi ça retient</b> : dans un fil où tout le monde parle, le silence et un geste exagéré sont l'interruption de motif ; universel, sans langue.</div>
@@ -313,7 +378,9 @@ section{margin:28px 0}
 
 <ul class="ex"><li><a href="https://www.youtube.com/shorts/Qo21XTHsMjc" target="_blank" rel="noopener">Khaby Lame · humour · YouTube Shorts</a><span class="vu">lien ouvert</span><br>55 324 142 vues (02/05/2024)</li></ul>
 <div class="look"><b>Le look à tourner</b> · il regarde quelqu'un qui grelotte avec 4 couches de coton, soupire, enlève une couche, met une mérinos fine : tout au geste ; la parole n'arrive qu'après 3 s.</div>
-</article><article class="carte verre " data-v="compatible" data-n="1" data-s="hn" data-c="iphone">
+<textarea class="note" data-n="25" placeholder="Une note pour cette forme (facultatif)"></textarea>
+</article><article class="carte verre " data-v="compatible" data-n="1" data-s="hn" data-c="iphone" id="f26" data-i="26" data-nom="POV texte à l'écran">
+<button class="coeur" data-c="26" aria-label="Coup de cœur"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9A5.2 5.2 0 0 1 12 6.4 5.2 5.2 0 0 1 21.3 12C19 16.4 12 21 12 21z"/></svg></button>
 <div class="haut"><span class="num">26</span><span class="chip gris">Hors niche</span><span class="chip fort">Compatible</span><span class="chip neuf">Nouveau pour toi</span><span class="chip gris">iPhone seul</span></div>
 <h3>POV texte à l'écran</h3>
 <div class="det"><b>Pourquoi ça retient</b> : le spectateur est placé DANS la scène (projection) ; le texte se lit en 1 s même sans le son.</div>
@@ -321,7 +388,9 @@ section{margin:28px 0}
 
 <ul class="ex"><li><a href="https://www.youtube.com/shorts/IKRvCxB1b6U" target="_blank" rel="noopener">Milivine Studio · mode (boutique robes) · YouTube Shorts</a><span class="vu">lien ouvert</span><br>7 556 806 vues (13/02/2026)</li><li><a href="https://www.youtube.com/shorts/GDORrzprjZU" target="_blank" rel="noopener">Milivine Studio · mode · YouTube Shorts</a><span class="vu">lien ouvert</span><br>3 103 647 vues (27/06/2026)</li></ul>
 <div class="look"><b>Le look à tourner</b> · plan subjectif iPhone (mains dans les gants, buée, quai de métro) + texte « POV » qui pose le problème de froid ; Damien n'apparaît qu'après, pour le conseil.</div>
-</article><article class="carte verre " data-v="compatible" data-n="1" data-s="hn" data-c="autre">
+<textarea class="note" data-n="26" placeholder="Une note pour cette forme (facultatif)"></textarea>
+</article><article class="carte verre " data-v="compatible" data-n="1" data-s="hn" data-c="autre" id="f27" data-i="27" data-nom="Transition de tenue (cut sur le geste)">
+<button class="coeur" data-c="27" aria-label="Coup de cœur"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9A5.2 5.2 0 0 1 12 6.4 5.2 5.2 0 0 1 21.3 12C19 16.4 12 21 12 21z"/></svg></button>
 <div class="haut"><span class="num">27</span><span class="chip gris">Hors niche</span><span class="chip fort">Compatible</span><span class="chip neuf">Nouveau pour toi</span><span class="chip gris">montage précis</span></div>
 <h3>Transition de tenue (cut sur le geste)</h3>
 <div class="det"><b>Pourquoi ça retient</b> : la surprise visuelle (changement instantané) est un pur interrupteur de motif ; on rejoue pour comprendre le « trick ».</div>
@@ -329,7 +398,9 @@ section{margin:28px 0}
 
 <ul class="ex"><li><a href="https://www.youtube.com/shorts/ctuAvi-z2XI" target="_blank" rel="noopener">Nisha Noelle · famille/mode · YouTube Shorts</a><span class="vu">lien ouvert</span><br>2 106 121 vues (11/07/2026)</li></ul>
 <div class="look"><b>Le look à tourner</b> · la pièce de l'épisode « tombe » sur lui (jette le pull vers l'objectif, cut, il le porte) ; 3 transitions = 3 références en 3 s ; Emilio cale les coupes sur le geste.</div>
-</article><article class="carte verre " data-v="adapter" data-n="0" data-s="hn" data-c="autre">
+<textarea class="note" data-n="27" placeholder="Une note pour cette forme (facultatif)"></textarea>
+</article><article class="carte verre " data-v="adapter" data-n="0" data-s="hn" data-c="autre" id="f28" data-i="28" data-nom="Sans visage : macro ou animation + voix off">
+<button class="coeur" data-c="28" aria-label="Coup de cœur"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9A5.2 5.2 0 0 1 12 6.4 5.2 5.2 0 0 1 21.3 12C19 16.4 12 21 12 21z"/></svg></button>
 <div class="haut"><span class="num">28</span><span class="chip gris">Hors niche</span><span class="chip">À adapter</span><span class="chip gris">Recoupe « mystère » et « gros plan matière »</span><span class="chip gris">Montage AE</span></div>
 <h3>Sans visage : macro ou animation + voix off</h3>
 <div class="det"><b>Pourquoi ça retient</b> : la question-mystère posée par la voix (« Pourquoi… ? ») + image qui montre le mécanisme ; zéro visage = rupture totale avec son fil.</div>
@@ -337,7 +408,9 @@ section{margin:28px 0}
 
 <ul class="ex"><li><a href="https://www.youtube.com/shorts/Myjedyp5Iwo" target="_blank" rel="noopener">Zack D. Films · vulgarisation · YouTube Shorts</a><span class="vu">lien ouvert</span><br>8 562 374 vues (11/11/2026)</li><li><a href="https://www.youtube.com/shorts/KNUvtyqbqDc" target="_blank" rel="noopener">Zack D. Films · vulgarisation · YouTube Shorts</a><span class="vu">lien ouvert</span><br>2 347 131 vues (12/11/2026)</li></ul>
 <div class="look"><b>Le look à tourner</b> · macro iPhone sur la fibre (laine, mérinos, duvet) ou animation AE du mécanisme (pourquoi le mérinos ne pue pas) ; voix de Damien seulement, son visage arrive à la fin pour le verdict.</div>
-</article><article class="carte verre " data-v="compatible" data-n="1" data-s="hn" data-c="iphone">
+<textarea class="note" data-n="28" placeholder="Une note pour cette forme (facultatif)"></textarea>
+</article><article class="carte verre " data-v="compatible" data-n="1" data-s="hn" data-c="iphone" id="f29" data-i="29" data-nom="J'ai porté la pièce N jours">
+<button class="coeur" data-c="29" aria-label="Coup de cœur"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9A5.2 5.2 0 0 1 12 6.4 5.2 5.2 0 0 1 21.3 12C19 16.4 12 21 12 21z"/></svg></button>
 <div class="haut"><span class="num">29</span><span class="chip gris">Hors niche</span><span class="chip fort">Compatible</span><span class="chip neuf">Nouveau pour toi</span><span class="chip gris">iPhone seul</span></div>
 <h3>J'ai porté la pièce N jours</h3>
 <div class="det"><b>Pourquoi ça retient</b> : promesse de résultat mesuré dans le temps (preuve) + curiosité sur l'issue.</div>
@@ -345,7 +418,9 @@ section{margin:28px 0}
 
 <ul class="ex"><li><a href="https://www.youtube.com/shorts/t8skelKSEzw" target="_blank" rel="noopener">ʚ Marshi ɞ · sport · YouTube Shorts</a><span class="vu">lien ouvert</span><br>3 108 452 vues (16/06/2024)</li><li><a href="https://www.youtube.com/shorts/cLFcZjaUNGo" target="_blank" rel="noopener">Butter Off Fat · perte de poids · YouTube Shorts</a><span class="vu">lien ouvert</span><br>1 465 848 vues (05/05/2022)</li></ul>
 <div class="look"><b>Le look à tourner</b> · porter la même pièce 7 ou 30 jours du tour d'Asie (le pull mérinos), ouvrir sur le jour 30 (état de la pièce en gros plan) ; Emilio monte les jours en rafale avec compteur.</div>
-</article><article class="carte verre " data-v="adapter" data-n="1" data-s="hn" data-c="iphone">
+<textarea class="note" data-n="29" placeholder="Une note pour cette forme (facultatif)"></textarea>
+</article><article class="carte verre " data-v="adapter" data-n="1" data-s="hn" data-c="iphone" id="f30" data-i="30" data-nom="Note sur 10 (grille fixe)">
+<button class="coeur" data-c="30" aria-label="Coup de cœur"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9A5.2 5.2 0 0 1 12 6.4 5.2 5.2 0 0 1 21.3 12C19 16.4 12 21 12 21z"/></svg></button>
 <div class="haut"><span class="num">30</span><span class="chip gris">Hors niche</span><span class="chip">À adapter</span><span class="chip neuf">Nouveau pour toi</span><span class="chip gris">iPhone seul</span></div>
 <h3>Note sur 10 (grille fixe)</h3>
 <div class="det"><b>Pourquoi ça retient</b> : le chiffre final est attendu dès la 1re seconde ; le spectateur note dans sa tête et compare.</div>
@@ -353,7 +428,9 @@ section{margin:28px 0}
 
 <ul class="ex"><li><a href="https://www.youtube.com/shorts/4hZdLgtcu5M" target="_blank" rel="noopener">Keith Lee (chaîne The Familee) · critique food · YouTube Shorts</a><span class="vu">lien ouvert</span><br>3 533 133 vues (22/01/2025) (description : il part d'un message reçu sur le lieu)</li><li><a href="https://www.youtube.com/shorts/EEt9pq7Dbl4" target="_blank" rel="noopener">Keith Lee (The Familee) · critique food · YouTube Shorts</a><span class="vu">lien ouvert</span><br>563 270 vues (12/01/2025)</li></ul>
 <div class="look"><b>Le look à tourner</b> · il ouvre sur la pièce + qui la lui a recommandée (un abonné, un commentaire), note finale en gros à la fin ; grille fixe d'une série à l'autre (chaleur, prix, durée).</div>
-</article><article class="carte verre " data-v="compatible" data-n="1" data-s="hn" data-c="iphone">
+<textarea class="note" data-n="30" placeholder="Une note pour cette forme (facultatif)"></textarea>
+</article><article class="carte verre " data-v="compatible" data-n="1" data-s="hn" data-c="iphone" id="f31" data-i="31" data-nom="Stop motion / tenue à plat qui s'assemble">
+<button class="coeur" data-c="31" aria-label="Coup de cœur"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9A5.2 5.2 0 0 1 12 6.4 5.2 5.2 0 0 1 21.3 12C19 16.4 12 21 12 21z"/></svg></button>
 <div class="haut"><span class="num">31</span><span class="chip gris">Hors niche</span><span class="chip fort">Compatible</span><span class="chip neuf">Nouveau pour toi</span><span class="chip gris">iPhone seul</span></div>
 <h3>Stop motion / tenue à plat qui s'assemble</h3>
 <div class="det"><b>Pourquoi ça retient</b> : image qui bouge « toute seule » = intrigue visuelle, et lecture d'une tenue entière en 1 s.</div>
@@ -361,7 +438,9 @@ section{margin:28px 0}
 
 <ul class="ex"><li><a href="https://www.youtube.com/shorts/3OFtGG7B1_A" target="_blank" rel="noopener">All That Is She · mode · YouTube Shorts</a><span class="vu">lien ouvert</span><br>4 791 950 vues (03/03/2023)</li></ul>
 <div class="look"><b>Le look à tourner</b> · les « trois couches » de l'épisode s'empilent toutes seules sur le lit d'hôtel ; iPhone fixé au plafond/trépied ; Emilio assemble les photos.</div>
-</article><article class="carte verre " data-v="compatible" data-n="1" data-s="hn" data-c="autre">
+<textarea class="note" data-n="31" placeholder="Une note pour cette forme (facultatif)"></textarea>
+</article><article class="carte verre " data-v="compatible" data-n="1" data-s="hn" data-c="autre" id="f32" data-i="32" data-nom="Le coût par port rendu visible">
+<button class="coeur" data-c="32" aria-label="Coup de cœur"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9A5.2 5.2 0 0 1 12 6.4 5.2 5.2 0 0 1 21.3 12C19 16.4 12 21 12 21z"/></svg></button>
 <div class="haut"><span class="num">32</span><span class="chip gris">Hors niche</span><span class="chip fort">Compatible</span><span class="chip neuf">Nouveau pour toi</span><span class="chip gris">Montage AE</span></div>
 <h3>Le coût par port rendu visible</h3>
 <div class="det"><b>Pourquoi ça retient</b> : un chiffre abstrait devient une image concrète (grains de riz, parts de pizza) : effet « eurêka » et partage.</div>
@@ -369,7 +448,9 @@ section{margin:28px 0}
 
 <ul class="ex"><li><a href="https://www.youtube.com/shorts/65ciWFjXaq8" target="_blank" rel="noopener">Humphrey Yang · finance perso · YouTube Shorts</a><span class="vu">lien ouvert</span><br>7 779 937 vues (01/08/2021)</li><li><a href="https://www.youtube.com/shorts/_3VFmmqFCoM" target="_blank" rel="noopener">Storyful Viral (reprise de la vidéo « riz » de Humphrey Yang, fortune de Bezos) · finance · YouTube Shorts</a><span class="vu">lien ouvert</span><br>538 054 vues (29/02/2020) (reprise média, pas l'original TikTok)</li></ul>
 <div class="look"><b>Le look à tourner</b> · le coût par port à l'écran : un pull à 120 € porté 100 fois contre un à 30 € porté 10 fois, illustré par des pièces de monnaie ou des tickets posés sur la table ; Emilio anime le calcul.</div>
-</article><article class="carte verre " data-v="adapter" data-n="0" data-s="hn" data-c="iphone">
+<textarea class="note" data-n="32" placeholder="Une note pour cette forme (facultatif)"></textarea>
+</article><article class="carte verre " data-v="adapter" data-n="0" data-s="hn" data-c="iphone" id="f33" data-i="33" data-nom="Tu le fais mal (l'erreur montrée, puis corrigée)">
+<button class="coeur" data-c="33" aria-label="Coup de cœur"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9A5.2 5.2 0 0 1 12 6.4 5.2 5.2 0 0 1 21.3 12C19 16.4 12 21 12 21z"/></svg></button>
 <div class="haut"><span class="num">33</span><span class="chip gris">Hors niche</span><span class="chip">À adapter</span><span class="chip gris">Recoupe « N erreurs »</span><span class="chip gris">iPhone seul</span></div>
 <h3>Tu le fais mal (l'erreur montrée, puis corrigée)</h3>
 <div class="det"><b>Pourquoi ça retient</b> : la peur d'être concerné (« moi aussi ? ») ; l'erreur visible vaut mieux qu'expliquée.</div>
@@ -377,7 +458,9 @@ section{margin:28px 0}
 
 <ul class="ex"><li><a href="https://www.youtube.com/shorts/VVzaFJobDlM" target="_blank" rel="noopener">Rootd · astuces · YouTube Shorts</a><span class="vu">lien ouvert</span><br>12 600 471 vues (08/05/2025)</li><li><a href="https://www.youtube.com/shorts/jXVDYHPz-xs" target="_blank" rel="noopener">VSTASKO · beauté · YouTube Shorts</a><span class="vu">lien ouvert</span><br>414 208 vues (07/03/2026)</li></ul>
 <div class="look"><b>Le look à tourner</b> · ouvrir sur l'erreur réelle (écharpe nouée qui laisse le cou à l'air, pull lavé à 40° qui feutre), puis la correction ; montrer, pas dire.</div>
-</article><article class="carte verre " data-v="adapter" data-n="0" data-s="en" data-c="autre">
+<textarea class="note" data-n="33" placeholder="Une note pour cette forme (facultatif)"></textarea>
+</article><article class="carte verre " data-v="adapter" data-n="0" data-s="en" data-c="autre" id="f34" data-i="34" data-nom="L'objet d'époque démontré">
+<button class="coeur" data-c="34" aria-label="Coup de cœur"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9A5.2 5.2 0 0 1 12 6.4 5.2 5.2 0 0 1 21.3 12C19 16.4 12 21 12 21z"/></svg></button>
 <div class="haut"><span class="num">34</span><span class="chip gris">Anglophone</span><span class="chip">À adapter</span><span class="chip gris">Recoupe « mystère pourquoi ça existe »</span><span class="chip gris">2e personne</span></div>
 <h3>L'objet d'époque démontré</h3>
 <div class="det"><b>Pourquoi ça retient</b> : une pièce banale (hoodie, pull norvégien) révèle un usage oublié, et le créateur le rejoue physiquement ; la surprise historique + le geste = on regarde jusqu'au bout.</div>
@@ -385,7 +468,9 @@ section{margin:28px 0}
 <div class="det"><b>Pour toi</b> : à adapter — l'histoire seule ne suffit pas chez lui ; il faut finir sur le prix d'aujourd'hui (« le même pull existe à X € ») pour rester dans son fil rouge.</div>
 <ul class="ex"><li><a href="https://www.youtube.com/shorts/uWr4Qn3a9Mo" target="_blank" rel="noopener">The Iron Snail · YouTube Shorts</a><span class="vu">lien ouvert</span><br>10 315 006 vues, médiane 2,7 M (×3,8), 12/2025 · hook : « The Lusekofte! »</li><li><a href="https://www.youtube.com/shorts/lxRK9XME2ns" target="_blank" rel="noopener">The Iron Snail · YouTube Shorts</a><span class="vu">lien ouvert</span><br>9 063 804 vues, 04/2025 · hook : « Why hoodie was originally for construction workers. »</li><li><a href="https://www.youtube.com/shorts/8FTHWC9Y7yU" target="_blank" rel="noopener">The Iron Snail · YouTube Shorts</a><span class="vu">lien ouvert</span><br>9 562 044 vues, 12/2025 · hook : « The brass wires kept your feet from falling off. »</li></ul>
 <div class="look"><b>Le look à tourner</b> · épisode « jean doublé flanelle » : il retourne le jean à l'envers face caméra pour montrer la doublure, décor extérieur froid ; plan poitrine, iPhone tenu par Emilio.</div>
-</article><article class="carte verre " data-v="adapter" data-n="1" data-s="en" data-c="autre">
+<textarea class="note" data-n="34" placeholder="Une note pour cette forme (facultatif)"></textarea>
+</article><article class="carte verre " data-v="adapter" data-n="1" data-s="en" data-c="autre" id="f35" data-i="35" data-nom="L'univers transposé (une tenue par ville)">
+<button class="coeur" data-c="35" aria-label="Coup de cœur"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9A5.2 5.2 0 0 1 12 6.4 5.2 5.2 0 0 1 21.3 12C19 16.4 12 21 12 21z"/></svg></button>
 <div class="haut"><span class="num">35</span><span class="chip gris">Anglophone</span><span class="chip">À adapter</span><span class="chip neuf">Nouveau pour toi</span><span class="chip gris">2e personne</span></div>
 <h3>L'univers transposé (une tenue par ville)</h3>
 <div class="det"><b>Pourquoi ça retient</b> : un système que tout le monde connaît (planètes, polices d'écriture, pays) devient une tenue ; chaque épisode est une case d'une collection, le spectateur attend « sa » case et commente.</div>
@@ -393,7 +478,9 @@ section{margin:28px 0}
 <div class="det"><b>Pour toi</b> : à adapter — le luxe de Wisdom est hors de son fil rouge ; la transposition à petit prix (« chaque ville du tour d'Asie en une tenue d'hiver à moins de X € ») garde la mécanique sans le budget.</div>
 <ul class="ex"><li><a href="https://www.youtube.com/shorts/SsRx23DxEMQ" target="_blank" rel="noopener">Wisdom Kaye · YouTube Shorts</a><span class="vu">lien ouvert</span><br>8 854 131 vues, médiane 741 k (×12), 03/2026 · hook : « High fashion solar system? »</li><li><a href="https://www.youtube.com/shorts/F29qwg8AHl8" target="_blank" rel="noopener">Wisdom Kaye · YouTube Shorts</a><span class="vu">lien ouvert</span><br>14 280 821 vues, 10/2024 · hook : « How tf do you make fonts fashion »</li><li><a href="https://www.youtube.com/shorts/d9Tq7oeTw8k" target="_blank" rel="noopener">Wisdom Kaye · YouTube Shorts</a><span class="vu">lien ouvert</span><br>27 795 910 vues, 11/2024 · hook : « YOU GUYS ARE DRIVING ME MAD » (contenu exact non vu)</li></ul>
 <div class="look"><b>Le look à tourner</b> · épisode « trois couches » tourné à Séoul/Tokyo : nom de la ville en grand titre la 1re seconde, lui en pied dans la rue, prix de chaque pièce en petites étiquettes ; Emilio tient l'iPhone en plan large fixe.</div>
-</article><article class="carte verre " data-v="adapter" data-n="0" data-s="hn" data-c="autre">
+<textarea class="note" data-n="35" placeholder="Une note pour cette forme (facultatif)"></textarea>
+</article><article class="carte verre " data-v="adapter" data-n="0" data-s="hn" data-c="autre" id="f36" data-i="36" data-nom="Avant / après, révélation retardée">
+<button class="coeur" data-c="36" aria-label="Coup de cœur"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9A5.2 5.2 0 0 1 12 6.4 5.2 5.2 0 0 1 21.3 12C19 16.4 12 21 12 21z"/></svg></button>
 <div class="haut"><span class="num">36</span><span class="chip gris">Hors niche</span><span class="chip">À adapter</span><span class="chip gris">Recoupe « avant / après »</span><span class="chip gris">2e personne</span></div>
 <h3>Avant / après, révélation retardée</h3>
 <div class="det"><b>Pourquoi ça retient</b> : on montre l'« avant » et on retient l'« après » : la promesse de transformation force à attendre (boucle ouverte).</div>
@@ -401,7 +488,9 @@ section{margin:28px 0}
 
 <ul class="ex"><li><a href="https://www.youtube.com/shorts/tq-m13eqlPc" target="_blank" rel="noopener">WaggishFn · coiffure/barbier · YouTube Shorts</a><span class="vu">lien ouvert</span><br>1 289 504 vues (23/06/2026)</li><li><a href="https://www.youtube.com/shorts/-N_vgDQQUNc" target="_blank" rel="noopener">Katie Feeney · lifestyle · YouTube Shorts</a><span class="vu">lien ouvert</span><br>1 802 045 vues (28/06/2022) (« young me vs me now », d'après le titre)</li></ul>
 <div class="look"><b>Le look à tourner</b> · ouvrir sur la tenue d'hiver « ratée » d'un pote (ou la sienne d'il y a 5 ans) ; l'après n'arrive qu'à la fin, avec les 2-4 références de l'épisode ; Emilio fait la révélation (coupe sur geste).</div>
-</article><article class="carte verre " data-v="adapter" data-n="0" data-s="en" data-c="iphone">
+<textarea class="note" data-n="36" placeholder="Une note pour cette forme (facultatif)"></textarea>
+</article><article class="carte verre " data-v="adapter" data-n="0" data-s="en" data-c="iphone" id="f37" data-i="37" data-nom="GRWM autour d'une pièce (sans hook parlé)">
+<button class="coeur" data-c="37" aria-label="Coup de cœur"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9A5.2 5.2 0 0 1 12 6.4 5.2 5.2 0 0 1 21.3 12C19 16.4 12 21 12 21z"/></svg></button>
 <div class="haut"><span class="num">37</span><span class="chip gris">Anglophone</span><span class="chip">À adapter</span><span class="chip gris">Proche de « fais-le avec moi »</span><span class="chip gris">iPhone seul</span></div>
 <h3>GRWM autour d'une pièce (sans hook parlé)</h3>
 <div class="det"><b>Pourquoi ça retient</b> : on part du corps à moitié habillé et on construit la tenue autour d'UNE pièce nommée dans le titre ; la boucle est « à quoi ça va ressembler fini », sans aucune phrase de hook.</div>
@@ -409,7 +498,9 @@ section{margin:28px 0}
 <div class="det"><b>Pour toi</b> : à adapter — utile pour casser le face-cam (pas de visage la 1re seconde), mais chez Simmons les GRWM 2026 font sous sa médiane (ex. 158 k, <a href="https://www.youtube.com/shorts/2uFcLxG16wc" target="_blank" rel="noopener">youtube.com/shorts/2uFcLxG16wc</a>) : format usé, à garder en respiration, pas en série.</div>
 <ul class="ex"><li><a href="https://www.youtube.com/shorts/C2pj59pPbj0" target="_blank" rel="noopener">Daniel Simmons · YouTube Shorts</a><span class="vu">lien ouvert</span><br>3 396 256 vues, médiane 298 k (×11), 09/2023 · hook : « Styling Loafers | Get Ready With Me »</li><li><a href="https://www.youtube.com/shorts/aebIrga1jjI" target="_blank" rel="noopener">Daniel Simmons · YouTube Shorts</a><span class="vu">lien ouvert</span><br>1 531 226 vues, ×5, 05/2023 · hook : « Styling Blue Jeans | Get Ready With Me »</li><li><a href="https://www.youtube.com/shorts/8tGLlzwJOFo" target="_blank" rel="noopener">Daniel Simmons · YouTube Shorts</a><span class="vu">lien ouvert</span><br>1 512 115 vues, ×5, 10/2022 · hook : « Get Ready With Me | Styling A Leather Jacket »</li></ul>
 <div class="look"><b>Le look à tourner</b> · épisode « jean doublé flanelle » : plan buste sans tête, il enfile le jean puis les couches par-dessus, sons d'ambiance (zip, tissu) ; iPhone sur trépied, cadre fixe.</div>
-</article><article class="carte verre " data-v="adapter" data-n="1" data-s="en" data-c="iphone">
+<textarea class="note" data-n="37" placeholder="Une note pour cette forme (facultatif)"></textarea>
+</article><article class="carte verre " data-v="adapter" data-n="1" data-s="en" data-c="iphone" id="f38" data-i="38" data-nom="La réplique (stitch d'une vidéo qui circule)">
+<button class="coeur" data-c="38" aria-label="Coup de cœur"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9A5.2 5.2 0 0 1 12 6.4 5.2 5.2 0 0 1 21.3 12C19 16.4 12 21 12 21z"/></svg></button>
 <div class="haut"><span class="num">38</span><span class="chip gris">Anglophone</span><span class="chip">À adapter</span><span class="chip neuf">Nouveau pour toi</span><span class="chip gris">iPhone seul</span></div>
 <h3>La réplique (stitch d'une vidéo qui circule)</h3>
 <div class="det"><b>Pourquoi ça retient</b> : on repart d'une vidéo qui circule déjà (stitch) et on la corrige ou la complète ; la vidéo d'origine sert de hook, et l'appel « envoie ça à quelqu'un » pousse le partage.</div>
@@ -417,7 +508,9 @@ section{margin:28px 0}
 <div class="det"><b>Pour toi</b> : à adapter — compatible si la réplique apporte un fait (prix, matière), jamais pour se moquer d'un autre créateur ; « ça va te sauver l'hiver » est une promesse à tenir réellement.</div>
 <ul class="ex"><li><a href="https://www.tiktok.com/@williamjwade/video/7570367403800972566" target="_blank" rel="noopener">William J Wade · TikTok</a><span class="vu">lien ouvert</span><br>1 600 000 lectures, 11/2025, 12 s · hook : « Send this to everyone you know, it'll save them this winter!!! »</li></ul>
 <div class="look"><b>Le look à tourner</b> · épisode « trois couches » : 2 s de la vidéo d'un autre (stitch TikTok natif), puis lui en plan poitrine qui retire la couche fautive ; iPhone sur trépied.</div>
-</article><article class="carte verre " data-v="adapter" data-n="0" data-s="hn" data-c="iphone">
+<textarea class="note" data-n="38" placeholder="Une note pour cette forme (facultatif)"></textarea>
+</article><article class="carte verre " data-v="adapter" data-n="0" data-s="hn" data-c="iphone" id="f39" data-i="39" data-nom="Classement / compte à rebours">
+<button class="coeur" data-c="39" aria-label="Coup de cœur"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9A5.2 5.2 0 0 1 12 6.4 5.2 5.2 0 0 1 21.3 12C19 16.4 12 21 12 21z"/></svg></button>
 <div class="haut"><span class="num">39</span><span class="chip gris">Hors niche</span><span class="chip">À adapter</span><span class="chip gris">Recoupe « N erreurs » ; tier list doudounes = flop chez toi</span><span class="chip gris">iPhone seul</span></div>
 <h3>Classement / compte à rebours</h3>
 <div class="det"><b>Pourquoi ça retient</b> : la liste numérotée annonce la durée et crée l'attente du n°1.</div>
@@ -425,7 +518,9 @@ section{margin:28px 0}
 
 <ul class="ex"><li><a href="https://www.youtube.com/shorts/DWw158c4Mc4" target="_blank" rel="noopener">Mrwhosetheboss · tech · YouTube Shorts</a><span class="vu">lien ouvert</span><br>37 622 948 vues (03/05/2023)</li></ul>
 <div class="look"><b>Le look à tourner</b> · 5 chaussettes d'hiver de la moins utile à la plus rentable ; compteur visible en AE.</div>
-</article><article class="carte verre " data-v="adapter" data-n="0" data-s="hn" data-c="iphone">
+<textarea class="note" data-n="39" placeholder="Une note pour cette forme (facultatif)"></textarea>
+</article><article class="carte verre " data-v="adapter" data-n="0" data-s="hn" data-c="iphone" id="f40" data-i="40" data-nom="Murmure en rayon">
+<button class="coeur" data-c="40" aria-label="Coup de cœur"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9A5.2 5.2 0 0 1 12 6.4 5.2 5.2 0 0 1 21.3 12C19 16.4 12 21 12 21z"/></svg></button>
 <div class="haut"><span class="num">40</span><span class="chip gris">Hors niche</span><span class="chip">À adapter</span><span class="chip gris">Recoupe « ungatekeeping »</span><span class="chip gris">iPhone seul</span></div>
 <h3>Murmure en rayon</h3>
 <div class="det"><b>Pourquoi ça retient</b> : la voix basse oblige à monter le son et crée une intimité « secret entre nous ».</div>
@@ -433,7 +528,9 @@ section{margin:28px 0}
 
 <ul class="ex"><li><a href="https://www.youtube.com/shorts/X6fDAPHp6Zg" target="_blank" rel="noopener">Makayla ASMR · ASMR · YouTube Shorts</a><span class="vu">lien ouvert</span><br>1 129 463 vues (05/04/2023) (illustre la mécanique seulement ; aucun exemple « bon plan chuchoté » viral trouvé)</li></ul>
 <div class="look"><b>Le look à tourner</b> · dans un magasin calme au Japon, il chuchote parce qu'il est en rayon (raison réelle, pas jouée) en montrant la pièce sous-cotée ; micro-cravate indispensable.</div>
-</article><article class="carte verre " data-v="adapter" data-n="1" data-s="hn" data-c="iphone">
+<textarea class="note" data-n="40" placeholder="Une note pour cette forme (facultatif)"></textarea>
+</article><article class="carte verre " data-v="adapter" data-n="1" data-s="hn" data-c="iphone" id="f41" data-i="41" data-nom="Écran de téléphone filmé (l'annonce Vinted à 3 €)">
+<button class="coeur" data-c="41" aria-label="Coup de cœur"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9A5.2 5.2 0 0 1 12 6.4 5.2 5.2 0 0 1 21.3 12C19 16.4 12 21 12 21z"/></svg></button>
 <div class="haut"><span class="num">41</span><span class="chip gris">Hors niche</span><span class="chip">À adapter</span><span class="chip neuf">Nouveau pour toi</span><span class="chip gris">iPhone seul</span></div>
 <h3>Écran de téléphone filmé (l'annonce Vinted à 3 €)</h3>
 <div class="det"><b>Pourquoi ça retient</b> : la capture (annonce Vinted, prix barré) est une preuve brute ; le doigt qui scrolle crée le mouvement.</div>
@@ -441,7 +538,9 @@ section{margin:28px 0}
 
 <ul class="ex"><li>Aucun exemple viral trouvé ET vérifié (les recherches « green screen », « Vinted find », « marketplace find » n'ont remonté que des vidéos &lt; 250 000 vues). · vérifiée : non<span class="nv">non vérifié</span><br></li></ul>
 <div class="look"><b>Le look à tourner</b> · c'est son origine (Vinted à 16 ans) : l'écran de l'annonce à 3 € en 1re image, puis la pièce réelle en main. iPhone 2 filme l'iPhone 1.</div>
-</article><article class="carte verre " data-v="jamais" data-n="0" data-s="fr" data-c="iphone">
+<textarea class="note" data-n="41" placeholder="Une note pour cette forme (facultatif)"></textarea>
+</article><article class="carte verre " data-v="jamais" data-n="0" data-s="fr" data-c="iphone" id="f42" data-i="42" data-nom="La dénonciation (« arnaque ? »)">
+<button class="coeur" data-c="42" aria-label="Coup de cœur"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-9.3-9A5.2 5.2 0 0 1 12 6.4 5.2 5.2 0 0 1 21.3 12C19 16.4 12 21 12 21z"/></svg></button>
 <div class="haut"><span class="num">42</span><span class="chip gris">Francophone</span><span class="chip gris">Jamais</span><span class="chip gris">Accroche négative : attire, ne fait ni aimer ni partager chez toi</span><span class="chip gris">iPhone seul</span></div>
 <h3>La dénonciation (« arnaque ? »)</h3>
 <div class="det"><b>Pourquoi ça retient</b> : promettre de démasquer un abus déclenche l'indignation et le besoin de se protéger ; souvent montée en réaction à la vidéo d'un autre créateur (écran partagé).</div>
@@ -449,6 +548,7 @@ section{margin:28px 0}
 <div class="det"><b>Pour toi</b> : jamais en accroche négative contre une personne (règle prouvée : ça attire mais ne fait ni aimer ni partager chez lui) ; seule version possible : protéger (« le piège des doudounes "duvet" à 30 € »), avec preuve.</div>
 <ul class="ex"><li><a href="https://www.youtube.com/shorts/ZWKAmjHQKxE" target="_blank" rel="noopener">Alex Cormac · YouTube Shorts</a><span class="vu">lien ouvert</span><br>1 222 320 vues · hook : écran partagé, autre créateur en haut, Alex en bas, mots « … de chemise… créateur » (texte à l'écran)</li><li><a href="https://www.youtube.com/shorts/8H4vqeqg0H8" target="_blank" rel="noopener">La Routine · YouTube Shorts</a><span class="vu">lien ouvert</span><br>1 153 693 vues · hook : « J'ai testé les… marques de vêtements » (texte à l'écran), « MARQUES de YOUTUBEURS, une ARNAQUE ? » (titre)</li><li><a href="https://www.youtube.com/shorts/bWF4F90j3Ts" target="_blank" rel="noopener">Virgil Dutilleul · YouTube Shorts</a><span class="vu">lien ouvert</span><br>625 111 vues · hook : face caméra, logo Vinted en main, « Arrête de te faire arnaquer sur Vinted » (titre)</li></ul>
 <div class="look"><b>Le look à tourner</b> · l'étiquette de composition en gros plan, tenue par Damien, la mention trompeuse entourée à l'écran ; iPhone tenu par lui, très près.</div>
+<textarea class="note" data-n="42" placeholder="Une note pour cette forme (facultatif)"></textarea>
 </article>
 </section>
 
@@ -470,9 +570,28 @@ section{margin:28px 0}
 
 <p class="pied">Rien n'est publié ni programmé. Règle du compte : jamais la même forme à moins de 3 vidéos d'intervalle. Sources de travail : ~/Documents/Audit des hooks/_travail/</p>
 </main>
+<div class="bas"><div class="verre"><div class="compte"><span id="compte">0 forme choisie</span><small id="sous">Touche un cœur sur les formes à tourner</small></div><button id="envoyer">Envoyer</button></div></div>
+<div class="toast" id="toast"></div>
 <script>
-const fs=document.querySelectorAll('#filtres .f'),cs=document.querySelectorAll('article.carte');
-fs.forEach(b=>b.onclick=()=>{fs.forEach(x=>x.classList.remove('on'));b.classList.add('on');const k=b.dataset.k;
-cs.forEach(c=>{let ok=k==='all'||(k==='n'&&c.dataset.n==='1')||(k==='iphone'&&c.dataset.c==='iphone')||c.dataset.v===k||c.dataset.s.split(' ').includes(k);c.classList.toggle('cache',!ok);});});
+const CLE="audit-hooks-coeurs-v1",NCLE="audit-hooks-notes-v1";
+const LS={get:k=>{try{return localStorage.getItem(k)}catch(e){return null}},set:(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}}};
+let coeurs=new Set(JSON.parse(LS.get(CLE)||"[]")),notes=JSON.parse(LS.get(NCLE)||"{}");
+const fs=document.querySelectorAll('#filtres .f'),cs=document.querySelectorAll('article.carte');let filtre='all';
+function appliquer(){cs.forEach(c=>{const k=filtre;let ok=k==='all'||(k==='n'&&c.dataset.n==='1')||(k==='iphone'&&c.dataset.c==='iphone')||(k==='coeur'&&coeurs.has(c.dataset.i))||c.dataset.v===k||c.dataset.s.split(' ').includes(k);c.classList.toggle('cache',!ok);});}
+fs.forEach(b=>b.onclick=()=>{fs.forEach(x=>x.classList.remove('on'));b.classList.add('on');filtre=b.dataset.k;appliquer();});
+function peindre(){cs.forEach(c=>{const on=coeurs.has(c.dataset.i);c.classList.toggle('choisie',on);c.querySelector('.coeur').classList.toggle('on',on);const n=c.querySelector('.note');if(notes[c.dataset.i]!==undefined)n.value=notes[c.dataset.i];});
+const n=coeurs.size;document.getElementById('compte').textContent=n+(n>1?' formes choisies':' forme choisie');document.getElementById('sous').textContent=n?'Puis Envoyer : le texte se copie, colle-le dans Tokn':'Touche un cœur sur les formes à tourner';}
+function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('on');setTimeout(()=>t.classList.remove('on'),2200);}
+document.addEventListener('click',ev=>{const c=ev.target.closest('.coeur');if(!c)return;const id=c.dataset.c;coeurs.has(id)?coeurs.delete(id):coeurs.add(id);LS.set(CLE,JSON.stringify([...coeurs]));peindre();if(filtre==='coeur')appliquer();});
+document.addEventListener('input',ev=>{const t=ev.target.closest('.note');if(!t)return;notes[t.dataset.n]=t.value;LS.set(NCLE,JSON.stringify(notes));});
+document.getElementById('envoyer').onclick=async()=>{
+  if(!coeurs.size){toast("Touche d'abord un cœur");return}
+  let t="Mes formes de hook à tourner :\n";
+  [...coeurs].sort().forEach(i=>{const c=document.getElementById('f'+i);t+=`- ${i} ${c.dataset.nom}${notes[i]?" — "+notes[i]:""}\n`});
+  t+="Ensuite : croise-les avec mes épisodes.";
+  try{if(navigator.share){await navigator.share({text:t});return}}catch(e){if(e.name=="AbortError")return}
+  try{await navigator.clipboard.writeText(t);toast("Copié : colle-le dans Tokn")}catch(e){prompt("Copie ce texte :",t)}
+};
+peindre();
 </script>
 </body></html>
